@@ -20,7 +20,18 @@ class SingleTon {
 public class Test {
     public static void main(String[] args) {
         SingleTon singleTon = SingleTon.getInstance();
-        System.out.println("count1=" + singleTon.count1);
-        System.out.println("count2=" + singleTon.count2);
+//        System.out.println("count1=" + singleTon.count1);
+//        System.out.println("count2=" + singleTon.count2);
+        int fast=4;
+        int slow=3;
+        fast = (slow^ fast) ^ (slow = fast);
+        int a=4;
+        int b=5;
+        a=a^b;
+        b=a^b;
+        a=a^b;
+        System.out.println(a);
+        System.out.println(b);
+        System.out.println(fast);
     }
 }

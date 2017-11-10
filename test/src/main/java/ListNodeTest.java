@@ -1,109 +1,84 @@
-
+import java.util.Scanner;
 
 public class ListNodeTest {
-    class Node{
-        Node next;
-        int data;
+    class ListNode{
+        int val;
+        ListNode next;
 
-        public Node(int data) {
-            this.data = data;
+        public ListNode(int data) {
+            this.val = data;
         }
     }
-    public static Node reverseList(Node head){
-        Node next=null;
-        Node pre=null;
-        while(head!=null){
-            next=head.next;
-            next.next=pre;
-            pre=head;
-            head=next;
-        }
-        return pre;
-    }
-    public Node removeRep(Node head){
-
-        Node cur=head;
-        Node pre=null;
-        Node next=cur.next;
-        while(cur!=null){
-            while(next!=null){
-                if(cur.data==next.data){
-                    cur=next;
-                    next=next.next;
-                }else{
-                    pre=cur;
-                    cur=next;
-                    next=next.next;
-                    break;
-                }
+    public  ListNode insertH(ListNode head,int data){
+        ListNode n=new ListNode(data);
+        ListNode cur=head;
+        if(head==null){
+            n.next=null;//n.next=head
+            head=n;
+        }else{
+            while(cur.next!=null){
+                cur=cur.next;
             }
-            cur=cur.next;
-
+            cur.next=n;
         }
-        return cur;
+        return head;
     }
-    /*
-    *
-    *
-    * public ListNode deleteDuplication(ListNode pHead)
-    {
-		if(pHead==null){
-            return null;
-        }
-        ListNode cur=pHead;
-        ListNode next=cur.next;
+    public ListNode insertT(ListNode head,int data){
+        ListNode n=new ListNode(data);
+        n.next=head;
+        head=n;
+        return head;
+    }
+    public ListNode delete(ListNode head,int data){
+        ListNode cur=head;
         ListNode pre=null;
-        while(cur!=null){
-            while(next!=null){
-                if(cur.val==next.val){
-                    cur=next;
-                    next=next.next;
-
+        while(null!=cur){
+            if(cur.val==data){
+                ListNode del=cur;
+                cur=cur.next;
+                if(null!=pre){
+                    pre.next=cur;
                 }else{
-                    pre=cur;
-                    cur=next;
-                    next=next.next;
-                    break;
-
+                    //head del
+                    head=cur;
                 }
+            }else{
+                pre=cur;
+                cur=cur.next;
             }
+        }
+        return head;
+    }
+    public void display(ListNode head){
+        ListNode cur=head;
+        while(cur!=null){
+            System.out.println(cur.val);
             cur=cur.next;
         }
-        return pHead;
     }
- public class ListNode {
-    int val;
-    ListNode next = null;
-
-    ListNode(int val) {
-        this.val = val;
-    }
-}
-
-    public class Solution {
-        public ListNode deleteDuplication(ListNode pHead)
-        {
-            if(pHead==null){
-                return null;
-            }
-            ListNode head=new ListNode(-1);
-            ListNode tail=head;
-            tail.next=pHead;
-            ListNode cur=pHead;
-            while(cur!=null){
-                if(cur.next!=null&&(cur.next.val==cur.val)){
-                    while(cur.next!=null&&cur.next.val==cur.val){
-                        cur=cur.next;
-                    }
-                    cur=cur.next;
-                    tail.next=cur;
-                }else{
-                    cur=cur.next;
-                    tail=tail.next;
-                }
-
-            }
-            return head.next;
+    public ListNode createList(int[] data){
+        ListNode head = null;
+        for (int i : data) {
+            head = insertH(head, i);
         }
-    }*/
+        return head;
+    }
+    public static void main(String[] args){
+        ListNodeTest test=new ListNodeTest();
+        /*Scanner sc=new Scanner(System.in);
+        ListNode head=null;
+        int dataLength=sc.nextInt();
+        while(dataLength-->0){
+            int data=sc.nextInt();
+            head=test.insertT(head,data);
+        }
+         sc.close();*/
+
+        ListNode head = null;
+        int[] data = {-5, 0, 1, 5, -2, -6};
+        head=test.createList(data);
+        test.display(head);
+
+
+    }
 }
