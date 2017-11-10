@@ -13,7 +13,6 @@ Return
     ["a","a","b"]
   ]*/
 public class PalindromePartitioning {
-    static int count=0;
 
     public static ArrayList<ArrayList<String>> partition(String s) {
         int[][] dp = new int[s.length()][s.length()];
@@ -37,7 +36,6 @@ public class PalindromePartitioning {
 
     public static void dfs(int i, String s, int[][] dp, ArrayList<String> r,
                            ArrayList<ArrayList<String>> result) {
-        System.out.println(++count);
         if (i == s.length()) {
             ArrayList<String> t = new ArrayList<String>(r);
             Collections.reverse(t);
@@ -46,10 +44,11 @@ public class PalindromePartitioning {
         }
         for (int j = i; j < s.length(); j++) {
             if (dp[i][j] == 1) {
-                r.add(0, s.substring(i, j + 1));
-                dfs(j + 1, s, dp, r, result);
+                ArrayList<String> tmp = new ArrayList<String>(r);
+                tmp.add(0, s.substring(i, j + 1));
+                dfs(j + 1, s, dp, tmp, result);
                 //为了删除r中存放的信息以便下一次继续使用该r
-                r.remove(0);
+                //r.remove(0);
             }
         }
     }

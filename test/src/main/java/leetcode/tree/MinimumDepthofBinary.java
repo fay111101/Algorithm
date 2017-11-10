@@ -6,19 +6,13 @@ import java.util.Scanner;
 
 public class MinimumDepthofBinary {
     public int run(TreeNode root) {
+
         if(root==null){
             return 0;
         }
-        if(root.left==null&&root.right==null){
-            return 1;
-        }
-        if(root.left==null){
-            return run(root.right)+1;
-        }
-        if(root.right==null){
-            return run(root.left)+1;
-        }
-        return Math.min(run(root.left),run(root.right))+1;
+        int left=run(root.left);
+        int right=run(root.right);
+        return Math.min(left,right)+1;
     }
 
     public int run1(TreeNode root) {
@@ -107,9 +101,9 @@ public class MinimumDepthofBinary {
         int[] arr2={1,2,0,0,0,0};
         TreeCommon common=new TreeCommon();
         TreeNode root = null;
-        root = common.createTrees(arr2);
+        root = common.createTrees(arr1);
         MinimumDepthofBinary min = new MinimumDepthofBinary();
-        int high = min.run1(root);
+        int high = min.run(root);
 //        int high = min.run2(root);
         System.out.println(high);
 
