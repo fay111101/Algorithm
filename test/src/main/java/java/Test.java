@@ -1,6 +1,8 @@
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 class SingleTon {
     private static SingleTon singleTon = new SingleTon();
@@ -33,5 +35,8 @@ public class Test {
         System.out.println(a);
         System.out.println(b);
         System.out.println(fast);
+        ArrayList arr=new ArrayList();
+        HashMap map=new HashMap();
+        ConcurrentHashMap cmp=new ConcurrentHashMap();
     }
 }

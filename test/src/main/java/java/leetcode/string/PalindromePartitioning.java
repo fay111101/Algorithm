@@ -22,6 +22,7 @@ public class PalindromePartitioning {
         for (int i = 0; i < s.length(); i++) {
             for (int j = i; j < s.length(); j++) {
                 int k = 0;
+                //判断是否是回文
                 for (; k < (j - i + 1) / 2; k++) {
                     if (s.charAt(i + k) != s.charAt(j - k)) break;
                 }
@@ -44,11 +45,10 @@ public class PalindromePartitioning {
         }
         for (int j = i; j < s.length(); j++) {
             if (dp[i][j] == 1) {
-                ArrayList<String> tmp = new ArrayList<String>(r);
-                tmp.add(0, s.substring(i, j + 1));
-                dfs(j + 1, s, dp, tmp, result);
+                r.add(0, s.substring(i, j + 1));
+                dfs(j + 1, s, dp, r, result);
                 //为了删除r中存放的信息以便下一次继续使用该r
-                //r.remove(0);
+                r.remove(0);
             }
         }
     }
