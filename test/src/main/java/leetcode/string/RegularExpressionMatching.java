@@ -33,12 +33,14 @@ public class RegularExpressionMatching {
                 return isMatch(s.substring(1),p.substring(1));
             }
         }
+        //至少匹配一次
         while(!s.isEmpty()&&(p.charAt(0)==p.charAt(0)||p.charAt(0)=='.')){
             if(isMatch(s,p.substring(2))){
                 return true;
             }
             s=s.substring(1);
         }
+        //匹配0次
         return isMatch(s,p.substring(2));
     }
 
@@ -76,7 +78,8 @@ public class RegularExpressionMatching {
     public static void main(String[] args){
         String s="aab";
         String p=".*ab";
+        String p1="c*a*b";
         RegularExpressionMatching test=new RegularExpressionMatching();
-        System.out.println(test.isMatch(s,p));
+        System.out.println(test.isMatch1(s,p1));
     }
 }

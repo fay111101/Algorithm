@@ -24,6 +24,7 @@ Note:
 public class Sum4 {
     public ArrayList<ArrayList<Integer>> fourSum(int[] num, int target) {
 
+        //Set<ArrayList<Integer>> result = new TreeSet<>();
         HashSet<ArrayList<Integer>> result = new HashSet<>();
         Arrays.sort(num);
         int left=0;
@@ -52,7 +53,6 @@ public class Sum4 {
                 }
             }
         }
-        List<List<Integer>> list=new ArrayList(result);
         //去冲了但是没有按顺序输出！
         return new ArrayList(result);
     }
@@ -162,6 +162,13 @@ public class Sum4 {
         //有重复
         ArrayList<ArrayList<Integer>> result1=test.fourSum1(arr3,-9);
         for(ArrayList<Integer> res:result1){
+            for(int a:res){
+                System.out.print(a+",");
+            }
+            System.out.println();
+        }
+        ArrayList<ArrayList<Integer>> result2=test.fourSum(arr3,-9);
+        for(ArrayList<Integer> res:result2){
             for(int a:res){
                 System.out.print(a+",");
             }
