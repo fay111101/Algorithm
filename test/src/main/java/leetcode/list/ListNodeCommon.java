@@ -1,11 +1,16 @@
 package leetcode.list;
-class ListNode {
+class ListNode implements Comparable<ListNode>{
     int val;
     ListNode next;
 
     ListNode(int x) {
         val = x;
         next = null;
+    }
+
+    @Override
+    public int compareTo(ListNode other) {
+        return val-other.val;
     }
 }
 public class ListNodeCommon {
