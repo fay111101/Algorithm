@@ -1,3 +1,8 @@
+<<<<<<< Updated upstream
 test/target/*
 test/.idea/*
 /.idea/*
+=======
+./test/target/*
+./.idea/*
+>>>>>>> Stashed changes
