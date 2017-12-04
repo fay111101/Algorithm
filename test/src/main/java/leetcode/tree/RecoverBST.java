@@ -1,4 +1,8 @@
 package leetcode.tree;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 /* Two elements of a binary search tree (BST) are swapped by mistake.
 
 Recover the tree without changing its structure.
@@ -17,14 +21,47 @@ signifies a path terminator where no node exists below.
 
 Here's an example:
 
-   1
+    1
   / \
  2   3
-    /\
-   4  5
+    /
+   4
+    \
+     5
+
 The above binary tree is serialized as"{1,2,3,#,#,4,#,#,5}". */
 public class RecoverBST {
     public void recoverTree(TreeNode root) {
+        ArrayList<TreeNode> list=new ArrayList<>();
+        List<Integer> vals=new ArrayList<Integer>();
+        inorderBST(root,list,vals);
+        Collections.sort(vals);
+        TreeNode[] temp=(TreeNode[]) list.toArray(new TreeNode[list.size()]);
+        for(int i=0;i<vals.size();i++){
+            //list.set(i,new TreeNode(vals.get(i)));
+            System.out.print(temp[i].val+" old ");
+            temp[i].val=vals.get(i);
+            System.out.print(temp[i].val+" new ");
+        }
+    }
+    private void inorderBST(TreeNode root, ArrayList<TreeNode> list,List<Integer> vals){
+        if(root==null){
+            return;
+        }
+        inorderBST(root.left,list,vals);
+        list.add(root);
+        vals.add(root.val);
+        inorderBST(root.right,list,vals);
+
+    }
+    public static void main(String[] args){
+        RecoverBST test=new RecoverBST();
+        int[] arr1={6,5,0,0,7,2,0,0,8,0,0};
+        TreeCommon common=new TreeCommon();
+        TreeNode root = null;
+        root = common.createTrees(arr1);
+        test.recoverTree(root);
+
 
     }
 
