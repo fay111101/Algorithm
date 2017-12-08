@@ -37,6 +37,8 @@ public class Test {
         System.out.println(fast);
         ArrayList arr=new ArrayList();
         HashMap map=new HashMap();
+        String test=5+"5";
+        System.out.println(test);
         ConcurrentHashMap cmp=new ConcurrentHashMap();
     }
 }

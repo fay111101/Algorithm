@@ -41,8 +41,6 @@ public class ReverseNodesInKGroup {
         ListNode newHead=reverseList(head,cur);
         head.next=reverseKGroup(cur,k);
         return newHead;
-
-
     }
     private ListNode reverseList(ListNode head,ListNode tail){
         ListNode pre=null;

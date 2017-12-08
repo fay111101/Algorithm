@@ -34,8 +34,8 @@ public class MergeKSortedLists {
         return lists.get(0);
     }
     private ListNode mergeTwoSortedList(ListNode list1,ListNode list2){
-        ListNode head=new ListNode(-1);
-        ListNode curr=head;
+        ListNode dummy=new ListNode(-1);
+        ListNode curr=dummy;
         while(list1!=null&&list2!=null){
             if(list1.val<=list2.val){
                 curr.next=list1;
@@ -53,7 +53,7 @@ public class MergeKSortedLists {
         if(list2!=null){
             curr.next=list2;
         }
-        return head.next;
+        return dummy.next;
     }
     public ListNode mergeKLists2(ArrayList<ListNode> lists){
         if(lists==null||lists.size()==0){
