@@ -26,8 +26,8 @@ public class SpiralMatrix {
         for(int i=0;i<layers;i++){
             for(int k = i;k<cols-i;k++) result.add(matrix[i][k]);
             for(int j=i+1;j<rows-i;j++) result.add(matrix[j][cols-i-1]);
-            for(int k=cols-i-2;(k>=i)&&(rows-i-1!=i);k--) result.add(matrix[rows-i-1][k]);
-            for(int j=rows-i-2;(j>i)&&(cols-i-1!=i);j--) result.add(matrix[j][i]);
+            for(int k=cols-i-2;(k>=i);k--) result.add(matrix[rows-i-1][k]);
+            for(int j=rows-i-2;(j>i);j--) result.add(matrix[j][i]);
         }
         return result;
     }
