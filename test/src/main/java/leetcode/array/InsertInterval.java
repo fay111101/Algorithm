@@ -1,6 +1,7 @@
 package leetcode.array;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by fay on 2017/12/11.
@@ -11,6 +12,7 @@ import java.util.ArrayList;
  Example 2:
  Given[1,2],[3,5],[6,7],[8,10],[12,16], insert and merge[4,9]in as[1,2],[3,10],[12,16].
  This is because the new interval[4,9]overlaps with[3,5],[6,7],[8,10].
+ https://www.cnblogs.com/splash/p/4249510.html
  */
 public class InsertInterval {
     public ArrayList<Interval> insert(ArrayList<Interval> intervals, Interval newInterval) {
@@ -30,7 +32,7 @@ public class InsertInterval {
                 }
                 break;
             }
-            //新的区间开始点大于原来间隙的结束点，则当前点直接添加结果集
+            //新的区间开始点大于原来间隙的结束点，则当前点直接添加到结果集
             else if(newInterval.start > intervals.get(i).end){
                 list.add(intervals.get(i));
             }
@@ -45,5 +47,27 @@ public class InsertInterval {
             }
         }
         return list;
+    }
+    public List<Interval> insert(List<Interval> intervals, Interval newInterval) {
+        int start = newInterval.start;
+        int end = newInterval.end;
+        List<Interval> re = new ArrayList<Interval>(intervals);
+        for(int i=0;i<re.size();i++) {
+            Interval temp = re.get(i);
+            if(end<temp.start) {
+                re.add(i, new Interval(start, end));
+                return re;
+            }
+            if(temp.end<start)
+                continue;
+            else {
+                start = Math.min(temp.start, start);
+                end = Math.max(temp.end, end);
+                re.remove(i);
+                i--;
+            }
+        }
+        re.add(new Interval(start, end));
+        return re;
     }
 }
