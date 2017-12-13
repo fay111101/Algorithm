@@ -2,7 +2,7 @@ import java.util.*;
 
 public class TreeTest {
     static int array[] = {23, 10, 0, 88, 0, 0, 15, 0, 34, 0, 0};
-
+    static int array[] = {23, 10, 0, 88, 0, 0, 15, 0, 34, 0, 0};
     public static class TreeNode {
         int val;
         TreeNode left;
