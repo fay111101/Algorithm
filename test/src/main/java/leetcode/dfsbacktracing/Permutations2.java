@@ -1,6 +1,7 @@
 package leetcode.dfsbacktracing;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 /**
@@ -14,12 +15,13 @@ import java.util.List;
 public class Permutations2 {
     public ArrayList<ArrayList<Integer>> permuteUnique(int[] num) {
         ArrayList<ArrayList<Integer>> result = new ArrayList<>();
-        ArrayList<Integer> res = new ArrayList<>();
+        HashSet<ArrayList<Integer>> res = new HashSet<>();
         int level = 0;
-        backtracking(num, level,num.length-1,result);
+        backtracking(num, level,num.length-1,res);
+        result.addAll(res);
         return result;
     }
-    private void backtracking(int[] num, int level, int n,ArrayList<ArrayList<Integer>> result) {
+    private void backtracking(int[] num, int level, int n,HashSet<ArrayList<Integer>>result) {
         if (level == n) {
             ArrayList<Integer> res=new ArrayList<>();
             for(int i:num){
