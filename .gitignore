@@ -1,4 +1,14 @@
+<<<<<<< HEAD
 test/target/*
 test/.idea/*
 /.idea/*
 
+=======
+test/target/*
+test/.idea/*
+test/out/*
+*.xml
+*.iml
+/.idea/*
+
+>>>>>>> 66d83aa3e6ef68f1f21311bddb82a3035d08cb85
