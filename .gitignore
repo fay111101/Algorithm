@@ -1,9 +1,7 @@
-test/target/*
-test/.idea/*
-/.idea/*
+target/*
+.idea/*
 
-test/.idea/*
-test/out/*
+out/*
 *.xml
 *.iml
 
