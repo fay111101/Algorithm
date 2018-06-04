@@ -1,6 +1,13 @@
 package leetcode.sort;
 
 public class QuikSort {
+    /**
+     * 原始算法
+     * @param arr
+     * @param low
+     * @param high
+     * @return
+     */
     int partition(int[] arr, int low, int high) {
         int base = arr[low];
 
@@ -21,9 +28,34 @@ public class QuikSort {
         return low;
     }
 
+    /**
+     * 改进算法
+     * @param arr
+     * @param low
+     * @param high
+     * @return
+     */
+    int partition1(int[] arr, int low, int high) {
+        int r0 = arr[low];
+        int base = arr[low];
+
+        while (low < high) {
+            while (low < high && arr[high] >= base) {
+                high--;
+            }
+            arr[low]=arr[high];
+            while (low < high && arr[low] <= base) {
+                low++;
+            }
+            arr[high]=arr[low];
+        }
+        arr[low]=r0;
+        return low;
+    }
+
     int[] quickSort(int[] arr, int low, int high) {
         if (low <high) {
-            int base = partition(arr, low, high);
+            int base = partition1(arr, low, high);
             quickSort(arr, 0, base - 1);
             quickSort(arr, base + 1, high);
         }
