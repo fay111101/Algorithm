@@ -18,9 +18,8 @@ public class MergeSort {
         }
     }
     public void mergeSort(int[] arr,int[] result,int start,int end){
-        if(start==end){
-            result[start]=arr[start];
-        }else{
+        if(start<end)
+        {
             int m=(start+end)/2;
             mergeSort(arr,result,start,m);
             mergeSort(arr,result,m+1,end);
@@ -70,8 +69,14 @@ public class MergeSort {
         int[] result=new int[arr.length];
         MergeSort qs = new MergeSort();
         qs.mergeSort1(arr, 0, arr.length-1 );
+        qs.mergeSort(arr, result,0, arr.length-1 );
         for (int num : arr) {
             System.out.println(num);
+
+        }
+        for (int num : result) {
+            System.out.print(num);
+            System.out.print("\t");
 
         }
     }
