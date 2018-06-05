@@ -29,7 +29,7 @@ public class QuikSort {
     }
 
     /**
-     * 改进算法
+     * 改进算法 让基准位置最后入位！
      * @param arr
      * @param low
      * @param high

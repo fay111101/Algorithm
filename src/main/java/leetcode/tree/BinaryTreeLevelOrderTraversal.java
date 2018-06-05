@@ -31,6 +31,7 @@ Here's an example:
     \
      5
 The above binary tree is serialized as"{1,2,3,#,#,4,#,#,5}".*/
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -41,31 +42,31 @@ public class BinaryTreeLevelOrderTraversal {
             ArrayList<ArrayList<Integer>>();
 
     public static ArrayList<ArrayList<Integer>> levelOrder(TreeNode root) {
-        if(root==null){
+        if (root == null) {
             return result;
         }
-        Queue<TreeNode> q=new LinkedList<TreeNode>();
+        Queue<TreeNode> q = new LinkedList<TreeNode>();
         q.offer(root);
-        int current=1;
-        int next=0;
-        ArrayList<Integer> res=new ArrayList<Integer>();
-        while(!q.isEmpty()){
-            TreeNode n=q.poll();
+        int current = 1;//记录当前层节点数
+        int next = 0;//记录下一层节点数
+        ArrayList<Integer> res = new ArrayList<Integer>();
+        while (!q.isEmpty()) {
+            TreeNode n = q.poll();
             res.add(n.val);
             current--;
-            if(n.left!=null){
+            if (n.left != null) {
                 q.offer(n.left);
                 next++;
             }
-            if(n.right!=null){
+            if (n.right != null) {
                 q.offer(n.right);
                 next++;
             }
-            if(current==0){
+            if (current == 0) {
                 result.add(res);
-                res=new ArrayList<Integer>();
-                current=next;
-                next=0;
+                res = new ArrayList<Integer>();
+                current = next;
+                next = 0;
             }
 
         }
@@ -90,13 +91,13 @@ public class BinaryTreeLevelOrderTraversal {
         TreeNode root = null;
         Scanner scanner = new Scanner(System.in);
         root = createTree(root, scanner);
-        int array[] = {23,10,0,88,0,0,15,0,34,0,0};
-        ArrayList<ArrayList<Integer>> res=levelOrder(root);
-        for(ArrayList<Integer> arr:res){
+        int array[] = {23, 10, 0, 88, 0, 0, 15, 0, 34, 0, 0};
+        ArrayList<ArrayList<Integer>> res = levelOrder(root);
+        for (ArrayList<Integer> arr : res) {
             System.out.println("level");
             //System.out.println(arr.size());
 
-            for(int i:arr){
+            for (int i : arr) {
                 System.out.println(i);
             }
 

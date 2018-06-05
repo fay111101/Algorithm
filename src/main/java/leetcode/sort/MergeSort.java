@@ -18,8 +18,7 @@ public class MergeSort {
         }
     }
     public void mergeSort(int[] arr,int[] result,int start,int end){
-        if(start<end)
-        {
+        if(start<end){
             int m=(start+end)/2;
             mergeSort(arr,result,start,m);
             mergeSort(arr,result,m+1,end);
