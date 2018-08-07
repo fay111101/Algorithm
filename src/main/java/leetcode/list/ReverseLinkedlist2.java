@@ -1,5 +1,4 @@
 package leetcode.list;
-
 /**
  * Created by fay on 2017/12/7.
  * Reverse a linked list from position m to n. Do it in-place and in one-pass.
@@ -10,10 +9,11 @@ package leetcode.list;
  * Given m, n satisfy the following condition:
  * 1 ≤ m ≤ n ≤ length of list.
  */
+//https://blog.csdn.net/fx677588/article/details/72357389
+
 public class ReverseLinkedlist2 {
     public ListNode reverseBetween(ListNode head, int m, int n) {
         ListNode dummy = new ListNode(-1);
-        dummy.next = head;
         ListNode cur = dummy;
         ListNode pre = dummy;
         ListNode nNode = null;
