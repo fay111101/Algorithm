@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * Given a collection of integers that might contain duplicates, S, return all possible subsets.
  * Note:
  * Elements in a subset must be in non-descending order.
- * The solution set must not contain duplicate subsets.
+ * The solution set must not contain _51_duplicate subsets.
  * <p>
  * For example,
  * If S =[1,2,2], a solution is:

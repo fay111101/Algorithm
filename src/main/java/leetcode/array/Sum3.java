@@ -9,7 +9,7 @@ import java.util.Arrays;
 Note:
 
     Elements in a triplet (a,b,c) must be in non-descending order. (ie, a ≤ b ≤ c)
-    The solution set must not contain duplicate triplets.
+    The solution set must not contain _51_duplicate triplets.
 
 
     For example, given array S = {-1 0 1 2 -1 -4},
