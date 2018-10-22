@@ -6,7 +6,7 @@ package offer.list;
 public class MergeTwoSortedList {
     public ListNode Merge(ListNode list1, ListNode list2) {
         ListNode p = list1, q = list2;
-        ListNode head = new ListNode(-1);
+        ListNode head = new ListNode(-1);//this is a trick
         ListNode tail = head;
 
         while (p != null && q != null) {
