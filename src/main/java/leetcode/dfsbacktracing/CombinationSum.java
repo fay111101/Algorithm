@@ -11,7 +11,7 @@ Note:
 
     All numbers (including target) will be positive integers.
     Elements in a combination (a 1, a 2, … , a k) must be in non-descending order. (ie, a 1 ≤ a 2 ≤ … ≤ a k).
-    The solution set must not contain duplicate combinations.
+    The solution set must not contain _51_duplicate combinations.
 
 
 For example, given candidate set2,3,6,7and target7,

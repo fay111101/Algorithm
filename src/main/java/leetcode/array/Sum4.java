@@ -11,7 +11,7 @@ Note:
 
     Elements in a quadruplet (a,b,c,d) must be in non-descending order. (ie,
     a ≤ b ≤ c ≤ d)
-    The solution set must not contain duplicate quadruplets.
+    The solution set must not contain _51_duplicate quadruplets.
 
 
     For example, given array S = {1 0 -1 0 -2 2}, and target = 0.
