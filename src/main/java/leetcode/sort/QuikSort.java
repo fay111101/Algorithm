@@ -1,6 +1,40 @@
 package leetcode.sort;
 
 public class QuikSort {
+
+
+    int partition0(int[] arr,int low,int high){
+        int base=arr[(low+high)/2];
+        int temp;
+
+        while(low<=high){
+            while(arr[low]<base){
+                low++;
+            }
+            while(arr[high]>base){
+                high--;
+            }
+
+            if(low<=high){
+                temp=arr[low];
+                arr[low]=arr[high];
+                arr[high]=temp;
+                low++;
+                high--;
+            }
+        }
+        return low;
+    }
+    void quickSort0(int[] array, int start, int end){
+        int index=partition0(array,start,end);
+        if(start<index-1){
+            quickSort0(array,start,index-1);
+        }
+        if(index<end){
+            quickSort0(array,index,end);
+        }
+    }
+
     /**
      * 原始算法 Hoare
      * 先把选定为pivot的元素放到最开始，然后设定指针low和指针high，high指针右移，low指针左移，
@@ -30,9 +64,10 @@ public class QuikSort {
         return low;
     }
 
+
     /**
      * 改进算法 让基准位置最后入位！
-     *
+     * 记住
      * @param arr
      * @param low
      * @param high
@@ -57,7 +92,8 @@ public class QuikSort {
 
     int[] quickSort(int[] arr, int low, int high) {
         if (low < high) {
-            int base = partition1(arr, low, high);
+//            int base = partition1(arr, low, high);
+            int base = partition(arr, low, high);
             quickSort(arr, 0, base - 1);
             quickSort(arr, base + 1, high);
         }
@@ -66,6 +102,7 @@ public class QuikSort {
     }
 
     /**
+     * 不记！
      *  设置两个指针 low和high
      * 先把选定为pivot的元素放到最后，然后设定指针low和指针high，low指针左移，
      * high指针右移，当两个指针相撞后停止移动。期间如果符合交换条件，两元素交换。最后把pivot元素放到中间。
@@ -91,22 +128,6 @@ public class QuikSort {
 
         swap(arr, low, end);
         return low;
-    }
-
-
-    /**
-     * 快速排序
-     *
-     * @param array 待排序数组
-     * @param start 待排序子数组的起始索引
-     * @param end   待排序子数组的结束索引
-     */
-    public  void quickSort2(int[] array, int start, int end) {
-        if (start < end) {
-            int position = partition2(array, start, end);
-            quickSort2(array, start, position - 1);
-            quickSort2(array, position + 1, end);
-        }
     }
 
     /**
@@ -137,6 +158,23 @@ public class QuikSort {
         return small + 1;
     }
 
+    /**
+     * 快速排序
+     *
+     * @param array 待排序数组
+     * @param start 待排序子数组的起始索引
+     * @param end   待排序子数组的结束索引
+     */
+    public  void quickSort2(int[] array, int start, int end) {
+        if (start < end) {
+            int position = partition2(array, start, end);
+            quickSort2(array, start, position - 1);
+            quickSort2(array, position + 1, end);
+        }
+    }
+
+
+
     private void swap(int[] arr, int index1, int index2) {
         int tmp = arr[index1];
         arr[index1] = arr[index2];
@@ -156,10 +194,12 @@ public class QuikSort {
     }
 
     public static void main(String[] args) {
-        int[] arr = {49, 38, 65, 97, 76, 13, 27, 49};
+        int[] arr = {49, 38, 65, 97, 76, 13, 27, 49,-1,-3};
         QuikSort qs = new QuikSort();
-//        arr = qs.quickSort(arr, 0, arr.length - 1);
+
+//        qs.quickSort(arr, 0, arr.length - 1);
         qs.quickSort2(arr, 0, arr.length - 1);
+//        qs.quickSort0(arr, 0, arr.length - 1);
         for (int num : arr) {
             System.out.println(num);
 

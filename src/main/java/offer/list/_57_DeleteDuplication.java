@@ -5,28 +5,27 @@ package offer.list;
  * 例如，链表1->2->3->3->4->4->5 处理后为 1->2->5
  */
 public class _57_DeleteDuplication {
+
     public ListNode deleteDuplication(ListNode pHead)
     {
-        if(pHead==null){
-            return null;
-        }
-        ListNode head=new ListNode(-1);
-        ListNode tail=head;
-        tail.next=pHead;
-        ListNode cur=pHead;
-        while(cur!=null){
-            if(cur.next!=null&&(cur.next.val==cur.val)){
-                while(cur.next!=null&&cur.next.val==cur.val){
-                    cur=cur.next;
-                }
-                cur=cur.next;
-                tail.next=cur;
-            }else{
-                cur=cur.next;
-                tail=tail.next;
-            }
+        if (pHead == null || pHead.next == null) return pHead;
 
+        ListNode dummy = new ListNode(-1);
+        dummy.next = pHead;
+        ListNode curr = pHead;
+        ListNode pre = dummy;
+
+        while (curr != null) {
+            while (curr.next != null && curr.next.val == curr.val) {
+                curr = curr.next;
+            }
+            if (pre.next == curr) {
+                pre = pre.next;
+            } else {
+                pre.next = curr.next;
+            }
+            curr = curr.next;
         }
-        return head.next;
+        return dummy.next;
     }
 }

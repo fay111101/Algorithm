@@ -1,11 +1,13 @@
-package leetcode.dfsbacktracing;
+package leetcode.dfsbfsbacktracing;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/* Given a set of candidate numbers ( C ) and a target number ( T ), find all unique combinations in C where the candidate numbers sums to T .
+/*
 
-The same repeated number may be chosen from C unlimited number of times.
+Given a collection of candidate numbers ( C ) and a target number ( T ), find all unique combinations in C where the candidate numbers sums to T .
+
+Each number in C may only be used once in the combination.
 
 Note:
 
@@ -14,21 +16,21 @@ Note:
     The solution set must not contain _51_duplicate combinations.
 
 
-For example, given candidate set2,3,6,7and target7,
+For example, given candidate set10,1,2,7,6,1,5and target8,
 A solution set is:
-[7]
-[2, 2, 3]
-
-*/
-public class CombinationSum {
-    public ArrayList<ArrayList<Integer>> combinationSum(int[] candidates, int target) {
+[1, 7]
+[1, 2, 5]
+[2, 6]
+[1, 1, 6] */
+public class CombinationSum2 {
+    public ArrayList<ArrayList<Integer>> combinationSum2(int[] num, int target) {
         ArrayList<ArrayList<Integer>> result=new ArrayList<>();
-        if(candidates==null||candidates.length==0){
+        if(num==null||num.length==0){
             return result;
         }
         ArrayList<Integer> res=new ArrayList<>();
-        Arrays.sort(candidates);
-        dfs(candidates,result,res,target,0);
+        Arrays.sort(num);
+        dfs(num,result,res,target,0);
         return result;
 
     }
@@ -38,22 +40,25 @@ public class CombinationSum {
         if(target<0){
             return;
         }else if(target==0){
-            //Bug
-            //result.add(res);
+            //Bug result.add(res);
             result.add(new ArrayList<>(res));
         }else{
             for(int i=start;i<candidates.length;i++){
+                if(i>start&&candidates[i]==candidates[i-1]){
+                    continue;
+                }
                 res.add(candidates[i]);
-                dfs(candidates,result,res,target-candidates[i],i);
+                dfs(candidates,result,res,target-candidates[i],i+1);
                 res.remove(res.size()-1);
             }
         }
     }
-
     public static void main(String[] args){
-        CombinationSum test=new CombinationSum();
+        CombinationSum2 test=new CombinationSum2();
         int[] arr={2,3,4,7};
-        ArrayList<ArrayList<Integer>> result=test.combinationSum(arr,7);
+        int[] arr1={1,1};
+        //ArrayList<ArrayList<Integer>> result=test.combinationSum2(arr,7);
+        ArrayList<ArrayList<Integer>> result=test.combinationSum2(arr1,1);
         for(ArrayList<Integer> res:result){
             for(int i:res){
                 System.out.print(i+" ");
@@ -62,4 +67,5 @@ public class CombinationSum {
         }
 
     }
+
 }

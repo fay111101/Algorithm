@@ -1,4 +1,4 @@
-package leetcode.dfsbacktracing;
+package leetcode.dfsbfsbacktracing;
 
 public class Powxn {
     public double pow(double x, int n) {

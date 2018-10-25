@@ -1,9 +1,8 @@
 
-package leetcode.dfsbacktracing;
+package leetcode.dfsbfsbacktracing;
 
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 
 /**
  * Created by fay on 2017/12/12.
