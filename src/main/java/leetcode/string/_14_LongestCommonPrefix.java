@@ -1,6 +1,6 @@
-package leetcode.timelimmit;
+package leetcode.string;
 /*Write a function to find the longest common prefix string amongst an array of strings.*/
-public class LongestCommonPrefix {
+public class _14_LongestCommonPrefix {
     public String longestCommonPrefix(String[] strs) {
         if(strs==null||strs.length==0){
             return "";
@@ -19,7 +19,7 @@ public class LongestCommonPrefix {
     }
     public static void main(String[] args){
         String[] strs={"aa","a"};
-        LongestCommonPrefix test=new LongestCommonPrefix();
+        _14_LongestCommonPrefix test=new _14_LongestCommonPrefix();
         test.longestCommonPrefix(strs);
     }
 

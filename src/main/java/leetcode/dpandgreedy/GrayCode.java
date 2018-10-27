@@ -1,4 +1,4 @@
-package leetcode.dynamic;
+package leetcode.dpandgreedy;
 
 import java.util.ArrayList;
 

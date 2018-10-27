@@ -8,7 +8,7 @@ import java.util.PriorityQueue;
 describe its complexity.
 
 */
-public class MergeKSortedLists {
+public class _23_MergeKSortedLists {
     public ListNode mergeKLists(ArrayList<ListNode> lists) {
         if (lists == null || lists.size() == 0) {
             return null;

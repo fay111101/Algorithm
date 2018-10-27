@@ -25,7 +25,7 @@ Did you notice that the reversed integer might overflow? Assume the input is a
 Throw an exception? Good, but what if throwing an exception is not an option?
 You would then have to re-design the function (ie, add an extra parameter).
 */
-public class ReverseInteger {
+public class _7_ReverseInteger {
     public int reverse(int x) {
         long newNum=0;
         int temp=0;
@@ -43,7 +43,7 @@ public class ReverseInteger {
         int x=123;
         int x1=-123;
         int x2=1233897879;
-        ReverseInteger test=new ReverseInteger();
+        _7_ReverseInteger test=new _7_ReverseInteger();
         System.out.println(test.reverse(x));
         System.out.println(test.reverse(x1));
         System.out.println(test.reverse(x2));

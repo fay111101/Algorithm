@@ -8,7 +8,7 @@ If the target is not found in the array, return[-1, -1].
 For example,
 Given[5, 7, 7, 8, 8, 10]and target value 8,
 return[3, 4]. */
-public class SearchForARange {
+public class _34_SearchForARange {
 
     public int[] searchRange(int[] A, int target) {
         int[] result={-1,-1};
@@ -52,7 +52,7 @@ public class SearchForARange {
 
     public static void main(String[] args){
         int[] arr={5, 7, 7, 8, 8, 10};
-        SearchForARange test=new SearchForARange();
+        _34_SearchForARange test=new _34_SearchForARange();
         int[] res=test.searchRange(arr,8);
         for(int i:res){
             System.out.println(i);

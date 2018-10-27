@@ -9,7 +9,7 @@ without repeating characters. For example, the longest substring
  length of 1. */
 
 
-public class LongestSubstringWithoutRepeatingCharacters {
+public class _3_LongestSubstringWithoutRepeatingCharacters {
 
     public int lengthOfLongestSubstring(String s) {
         if(s==null||s.length()==0){
@@ -71,8 +71,8 @@ public class LongestSubstringWithoutRepeatingCharacters {
         String
         s1="wlrbbmqbhcdarzowkkyhiddqscdxrjmowfrxsjybldbefsarcbynecdyggxxpklorell" +
                 "nmpapqfwkhopkmco";
-        LongestSubstringWithoutRepeatingCharacters test=new
-                LongestSubstringWithoutRepeatingCharacters();
+        _3_LongestSubstringWithoutRepeatingCharacters test=new
+                _3_LongestSubstringWithoutRepeatingCharacters();
         /*System.out.println(test.lengthOfLongestSubstring(s));
         System.out.println(test.lengthOfLongestSubstring1(s1));
         System.out.println(test.lengthOfLongestSubstring1(s));

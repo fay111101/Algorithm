@@ -16,7 +16,7 @@ of rows:
 string convert(string text, int nRows);
 
 convert("PAYPALISHIRING", 3)should return"PAHNAPLSIIGYIR". */
-public class ZigZagConversion {
+public class _6_ZigZagConversion {
 
     public String convert(String s, int nRows) {
         if(s==null||s.length()==0||nRows<0){
@@ -44,7 +44,7 @@ public class ZigZagConversion {
     }
     public static void main(String[] args){
         String s="PAYPALISHIRING";
-        ZigZagConversion test=new ZigZagConversion();
+        _6_ZigZagConversion test=new _6_ZigZagConversion();
         System.out.println(test.convert(s,3));
     }
 }

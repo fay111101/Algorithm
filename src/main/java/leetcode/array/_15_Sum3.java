@@ -18,7 +18,7 @@ Note:
     (-1, 0, 1)
     (-1, -1, 2)
 */
-public class Sum3 {
+public class _15_Sum3 {
     public ArrayList<ArrayList<Integer>> threeSum(int[] num) {
         ArrayList<ArrayList<Integer>> result=new ArrayList<>();
         Arrays.sort(num);
@@ -55,7 +55,7 @@ public class Sum3 {
         return  result;
     }
     public static void main(String[] args){
-        Sum3 test=new Sum3();
+        _15_Sum3 test=new _15_Sum3();
         int[] num={-1, 0 ,1 ,2 ,-1 ,-4};
         int[] num1={0,0,0,0};
         int[] num2={-2,0,1,1,2};

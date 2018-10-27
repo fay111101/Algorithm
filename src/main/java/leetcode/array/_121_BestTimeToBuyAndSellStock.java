@@ -6,7 +6,7 @@ If you were only permitted to complete at most one transaction
 (ie, buy one and sell one share of the stock),
  design an algorithm to find the maximum profit.
 */
-public class BestTimeToBuyAndSellStock {
+public class _121_BestTimeToBuyAndSellStock {
 
     public int maxProfit(int[] prices){
         if(prices==null||prices.length==0){

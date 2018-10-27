@@ -21,7 +21,7 @@ Note:
     (-2, -1, 1, 2)
     (-2,  0, 0, 2)
 */
-public class Sum4 {
+public class _18_Sum4 {
     public ArrayList<ArrayList<Integer>> fourSum(int[] num, int target) {
 
         //Set<ArrayList<Integer>> result = new TreeSet<>();
@@ -157,7 +157,7 @@ public class Sum4 {
         int[] arr1={-3,-2,-1,0,0,1,2,3};
         int[] arr2={-1,-5,-5,-3,2,5,0,4};
         int[] arr3={-1,0,-5,-2,-2,-4,0,1,-2};
-        Sum4 test=new Sum4();
+        _18_Sum4 test=new _18_Sum4();
        // ArrayList<ArrayList<Integer>> result1=test.fourSum1(arr2,-7);
         //有重复
         ArrayList<ArrayList<Integer>> result1=test.fourSum1(arr3,-9);

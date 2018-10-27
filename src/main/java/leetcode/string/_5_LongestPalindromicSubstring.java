@@ -4,7 +4,7 @@ package leetcode.string;
  * 最长回文子串
  * 
  */
-public class LongestPalindromicSubstring {
+public class _5_LongestPalindromicSubstring {
     //leetcode ac
     public String longestPalindrome1(String s) {
         if(s==null||s.length()==0){
@@ -58,7 +58,7 @@ public class LongestPalindromicSubstring {
     }
 
     public static void main(String[] args){
-        LongestPalindromicSubstring test=new LongestPalindromicSubstring();
+        _5_LongestPalindromicSubstring test=new _5_LongestPalindromicSubstring();
         System.out.print(test.longestPalindrome("zcbbababbca"));
     }
 }

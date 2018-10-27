@@ -1,4 +1,4 @@
-package leetcode.dynamic;
+package leetcode.dpandgreedy;
 
 /**
  * Created by fay on 2017/12/13.

@@ -10,7 +10,7 @@ assume that each input would have exactly one solution.
 
     The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).
 */
-public class SumClosest {
+public class _16_SumClosest {
     public int threeSumClosest(int[] num, int target) {
         int closet=num[0]+num[1]+num[2];
         int diff=Math.abs(closet-target);

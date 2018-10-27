@@ -7,31 +7,31 @@ package offer.array;
  */
 public class _8_MinNumberInRotateArray {
 
-    public int minNumberInRotateArray(int [] array) {
-        if(array.length==0||array==null){
+    public int minNumberInRotateArray(int[] array) {
+        if (array.length == 0 || array == null) {
             return 0;
         }
-        int start=0;
-        int end=array.length-1;
-        int mid=start;
-        while(array[start]>=array[end]){
+        int start = 0;
+        int end = array.length - 1;
+        int mid = start;
+        while (array[start] >= array[end]) {
             //当前面减后面等于1时该值最小
-            if(end-start==1){
-                mid=end;
+            if (end - start == 1) {
+                mid = end;
                 break;
             }
-            mid=(start+end)>>1;
-            if(array[mid]>array[end]){
-                start=mid;
-            }else{
-                end=mid;
+            mid = (start + end) >> 1;
+            if (array[mid] > array[end]) {
+                start = mid;
+            } else {
+                end = mid;
             }
             //有重复出现的数字的情况
-            int result=array[start];
-            if((array[start]==array[mid])&&(array[end]==array[mid])){
-                for(int i=start;i<=end;i++){
-                    if(result>array[i]){
-                        result=array[i];
+            int result = array[start];
+            if ((array[start] == array[mid]) && (array[end] == array[mid])) {
+                for (int i = start; i <= end; i++) {
+                    if (result > array[i]) {
+                        result = array[i];
 
                     }
                 }

@@ -7,7 +7,7 @@ package leetcode.list;
  of the first two lists.
 
  */
-public class MergeTwoSortedLists {
+public class _21_MergeTwoSortedLists {
     
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode dummy=new ListNode(-1);

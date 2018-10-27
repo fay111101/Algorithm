@@ -8,7 +8,7 @@ transactions as you like (ie, buy one and sell one share of the stock multiple
  (ie, you must sell the stock before you buy again).
 */
 
-public class BestTimeToBuyAndSellStock2 {
+public class _122_BestTimeToBuyAndSellStock2 {
     public int maxProfit(int[] prices) {
         if(prices==null||prices.length==0){
             return 0;

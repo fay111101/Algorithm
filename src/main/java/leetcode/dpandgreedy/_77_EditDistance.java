@@ -1,4 +1,4 @@
-package leetcode.dynamic;
+package leetcode.dpandgreedy;
 
 /**
  * Created by fay on 2017/12/15.
@@ -8,7 +8,7 @@ package leetcode.dynamic;
  b) Delete a character
  c) Replace a character
  */
-public class EditDistance {
+public class _77_EditDistance {
     public int minDistance(String word1, String word2) {
         int m=word1.length();
         int n=word2.length();

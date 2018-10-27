@@ -12,7 +12,7 @@ package leetcode.list;
  * Output: 1->2->3->4
  *
  */
-public class InsertionSortList {
+public class _147_InsertionSortList {
     //2018-8-23
     public ListNode insertionSortList2(ListNode head) {
         if(head==null||head.next==null){
@@ -43,7 +43,7 @@ public class InsertionSortList {
 
 
     public static void main(String[] args) {
-        InsertionSortList test = new InsertionSortList();
+        _147_InsertionSortList test = new _147_InsertionSortList();
         ListNodeCommon utils=new ListNodeCommon();
 
         ListNode head = null;
