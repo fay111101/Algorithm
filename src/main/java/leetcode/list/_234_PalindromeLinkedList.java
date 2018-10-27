@@ -12,7 +12,8 @@ package leetcode.list;
  * Input: 1->2->2->1
  * Output: true
  */
-public class PalindromeLinkedList234 {
+public class _234_PalindromeLinkedList {
+
     public boolean isPalindrome(ListNode head){
         return false;
     }

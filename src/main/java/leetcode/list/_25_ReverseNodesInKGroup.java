@@ -25,7 +25,7 @@ For k = 3, you should return:3->2->1->4->5
 {2,1}
 
 */
-public class ReverseNodesInKGroup {
+public class _25_ReverseNodesInKGroup {
     public ListNode reverseKGroup(ListNode head, int k) {
         if(head==null||k<=1){
             return head;

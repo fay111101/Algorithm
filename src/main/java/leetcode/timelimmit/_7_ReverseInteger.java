@@ -1,7 +1,5 @@
 package leetcode.timelimmit;
 
-import com.sun.org.apache.regexp.internal.RE;
-
 /*
 
 Reverse digits of an integer.
@@ -25,25 +23,35 @@ Did you notice that the reversed integer might overflow? Assume the input is a
 Throw an exception? Good, but what if throwing an exception is not an option?
 You would then have to re-design the function (ie, add an extra parameter).
 */
-public class ReverseInteger {
+public class _7_ReverseInteger {
+
     public int reverse(int x) {
-        long newNum=0;
-        int temp=0;
+//        long newNum=0;
+//        int temp=0;
+//        while(x!=0){
+//            temp=x%10;
+//            newNum=newNum*10+temp;
+//            if(newNum>Integer.MAX_VALUE){
+//                return 0;
+//            }
+//            x=x/10;
+//        }
+//        return (int)newNum;
+        int t=0;
         while(x!=0){
-            temp=x%10;
-            newNum=newNum*10+temp;
-            if(newNum>Integer.MAX_VALUE){
+            if(t>Integer.MAX_VALUE/10||t<Integer.MIN_VALUE/10){
                 return 0;
             }
+            t=t*10+x%10;
             x=x/10;
         }
-        return (int)newNum;
+        return t;
     }
     public static void main(String[] args){
         int x=123;
         int x1=-123;
         int x2=1233897879;
-        ReverseInteger test=new ReverseInteger();
+        _7_ReverseInteger test=new _7_ReverseInteger();
         System.out.println(test.reverse(x));
         System.out.println(test.reverse(x1));
         System.out.println(test.reverse(x2));

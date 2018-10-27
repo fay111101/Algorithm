@@ -1,4 +1,4 @@
-package main.java.leetcode.search;
+package leetcode.search;
 
 /**
  *  Given a 2D board and a word, find if the word exists in the grid.
@@ -19,6 +19,7 @@ package main.java.leetcode.search;
  word ="ABCB", -> returnsfalse.
  */
 public class WordSearch {
+
     public boolean exist(char[][] board, String word) {
         if(board==null||board.length==0||board[0].length==0){
             return false;

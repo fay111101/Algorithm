@@ -8,6 +8,7 @@ For example, given n = 3, a solution set is:
 
 "((()))", "(()())", "(())()", "()(())", "()()()" */
 public class GenerateParentheses {
+
     public ArrayList<String> generateParenthesis(int n) {
         ArrayList<String> result=new ArrayList();
         StringBuffer res=new StringBuffer();

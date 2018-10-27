@@ -7,6 +7,7 @@ import java.util.Arrays;
 Note:
 Your algorithm should have a linear runtime complexity. Could you implement it
 without using extra memory?*/
+
 public class SingleNumber2 {
     public int singleNumber(int[] A) {
         //1、肯定是排序

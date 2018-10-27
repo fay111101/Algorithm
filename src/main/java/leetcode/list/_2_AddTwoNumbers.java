@@ -1,5 +1,4 @@
 package leetcode.list;
-import utils.*;
 
 /*
 You are given two linked lists representing two non-negative numbers. The digits are stored in reverse order and each of
@@ -7,8 +6,8 @@ their nodes contain a single digit. _47_Add the two numbers and return it as a l
 Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
 Output: 7 -> 0 -> 8
 * */
-public class AddTwoNumbers {
-    
+public class _2_AddTwoNumbers {
+
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         if(l1==null||l2==null){
             return null;
@@ -86,7 +85,7 @@ public class AddTwoNumbers {
         int[] data1={5,6,4};
 
         ListNode l2=l.createList(data1 );
-        l.display(AddTwoNumbers.addTwoNumbers(l1,l2));
+        l.display(_2_AddTwoNumbers.addTwoNumbers(l1,l2));
 
 
     }

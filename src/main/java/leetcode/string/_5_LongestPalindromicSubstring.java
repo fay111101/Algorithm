@@ -2,13 +2,38 @@ package leetcode.string;
 
 /**
  * 最长回文子串
- * 
+ * 给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为1000。
+
+ 示例 1：
+
+ 输入: "babad"
+ 输出: "bab"
+ 注意: "aba"也是一个有效答案。
+ 示例 2：
+
+ 输入: "cbbd"
+ 输出: "bb"
+ 在真实的面试中遇到过这道题？
+
+ 是
+
+ 否
+ https://www.jianshu.com/p/c82cada7e5b0
+ 设状态dp[j][i]表示索引j到索引i的子串是否是回文串。则转移方程为：
+ dp[j][i] true j==i;
+ dp[j][i] str[i]==str[j] i-j=1
+ dp[j][i] str[i]==str[j]&&dp[j+1][i-1] i-j>1
  */
-public class LongestPalindromicSubstring {
+public class _5_LongestPalindromicSubstring {
+    //
     //leetcode ac
     public String longestPalindrome1(String s) {
-        if(s==null||s.length()==0){
+        if(s==null){
             return null;
+        }
+        if (s.equals("")) {
+
+            return "";
         }
         int size=s.length();
         int[][] dp=new int[size][size];
@@ -45,20 +70,21 @@ public class LongestPalindromicSubstring {
         return s.substring(left, left + maxLen);
     }
 
-    private void findMaxPalindrome(String s, int i, int j) {
-        while (i >= 0 && j < s.length() && s.charAt(i) == s.charAt(j)) {
+    private void findMaxPalindrome(String s, int l, int r) {
+        while (l >= 0 && r < s.length() && s.charAt(l) == s.charAt(r)) {
 
-            i--;
-            j++;
+            l--;
+            r++;
         }
-        if (maxLen < j - i - 1) {
-            left = i+1;
-            maxLen = j - i - 1;
+        if (maxLen < r - l - 1) {
+            left = l+1;
+            maxLen = r - l - 1;
         }
     }
 
     public static void main(String[] args){
-        LongestPalindromicSubstring test=new LongestPalindromicSubstring();
-        System.out.print(test.longestPalindrome("zcbbababbca"));
+        _5_LongestPalindromicSubstring test=new _5_LongestPalindromicSubstring();
+//        System.out.print(test.longestPalindrome1("zcbbababbca"));
+        System.out.print(test.longestPalindrome1(""));
     }
 }

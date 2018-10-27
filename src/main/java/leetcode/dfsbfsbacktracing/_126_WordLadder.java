@@ -2,9 +2,18 @@ package leetcode.dfsbfsbacktracing;
 
 import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
 
 public class _126_WordLadder {
-
+    /**
+     * bfs层次遍历的思想
+     *
+     * @param start
+     * @param end
+     * @param dict
+     * @return
+     */
     public int ladderLength(String start, String end, HashSet<String> dict) {
         if (start == null || end == null || start.length() == 0 || end.length() == 0 || start.length() != end.length())
             return 0;
@@ -45,4 +54,46 @@ public class _126_WordLadder {
 
         return 0;
     }
+
+    /**
+     * 无向图搜索的思想 https://www.jianshu.com/p/753bd585d57e
+     *
+     * @param beginWord
+     * @param endWord
+     * @param wordList
+     * @return
+     */
+    public int ladderLength(String beginWord, String endWord, List<String> wordList) {
+
+        Set<String> wordSet = new HashSet<>(wordList);
+        Set<String> visited = new HashSet<>();
+        visited.add(beginWord);
+        int dist = 1;
+
+        while (!visited.contains(endWord)) {
+            Set<String> temp = new HashSet<>();
+            for (String word : visited) {
+                for (int i = 0; i < word.length(); i++) {
+                    char[] chars = word.toCharArray();
+                    for (int j = (int) 'a'; j < (int) 'z' + 1; j++) {
+                        chars[i] = (char) j;
+                        String newWord = new String(chars);
+                        if (wordSet.contains(newWord)) {
+                            temp.add(newWord);
+                            wordSet.remove(newWord);
+                        }
+                    }
+                }
+            }
+            dist += 1;
+            if (temp.size() == 0) { // it nevert get to the endWord
+                return 0;
+            }
+
+            visited = temp;
+        }
+
+        return dist;
+    }
+
 }

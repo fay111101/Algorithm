@@ -11,7 +11,7 @@ Determine if a Sudoku is valid, according to: Sudoku Puzzles - The Rules.
 
 The Sudoku board could be partially filled, where empty cells are filled with
  the character'.'. */
-public class ValidSudoku {
+public class _20_ValidSudoku {
 
     /*
      * 题意：让你判断这是否是一个正确的数独，

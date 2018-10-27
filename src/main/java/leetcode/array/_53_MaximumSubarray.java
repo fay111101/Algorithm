@@ -15,6 +15,8 @@ package leetcode.array;
  * divide and conquer approach, which is more subtle.
  */
 public class _53_MaximumSubarray {
+
+
     public int maxSubArray(int[] nums) {
         int currSum=0,result=Integer.MIN_VALUE;
         for(int i=0;i<nums.length;i++){

@@ -4,11 +4,12 @@ package leetcode.dynamic;
  * Created by fay on 2017/12/15.
  * Given two words word1 and word2, find the minimum number of steps required to convert word1 to word2. (each operation is counted as 1 step.)
  You have the following 3 operations permitted on a word:
- a) _55_FirstNotRepeatingChar a character
+ a) insert a character
  b) Delete a character
  c) Replace a character
  */
-public class EditDistance {
+public class _77_EditDistance {
+
     public int minDistance(String word1, String word2) {
         int m=word1.length();
         int n=word2.length();
@@ -23,9 +24,12 @@ public class EditDistance {
             for(int j=1;j<=n;j++){
                 if(word1.charAt(i-1)==word2.charAt(j-1)){
                     dp[i][j]=dp[i-1][j-1];
-                }else{
-                    dp[i][j]=Math.min(dp[i-1][j-1],Math.min(dp[i-1][j],dp[i][j-1]))+1;
                 }
+                else{
+                    dp[i][j]=dp[i-1][j-1]+1;
+                }
+                dp[i][j]=Math.min(dp[i][j],dp[i-1][j]+1);//delete a character
+                dp[i][j]=Math.min(dp[i][j],dp[i][j-1]+1);//insert a character
             }
         }
         return dp[m][n];

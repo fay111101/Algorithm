@@ -6,10 +6,10 @@ For example,
 Note:
 Have you consider that the string might be empty? This is a good question to ask during an interview.
 For the purpose of this problem, we define empty string as valid palindrome.*/
-public class _9_isPalindrome {
+public class _125_isPalindrome {
 
     public boolean isPalindrome(String s) {
-        if(s==null||s.length()==0){
+        if(s==null){
             return false;
         }
         int len=s.length();

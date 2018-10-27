@@ -9,70 +9,73 @@ without repeating characters. For example, the longest substring
  length of 1. */
 
 
-public class LongestSubstringWithoutRepeatingCharacters {
+public class _3_LongestSubstringWithoutRepeatingCharacters {
 
     public int lengthOfLongestSubstring(String s) {
-        if(s==null||s.length()==0){
+        if (s == null || s.length() == 0) {
             return 0;
         }
         //记录字符上一次出现的位置的后一个位置
-        int[] map=new int[256];
-        int max=0;
-        int left=0;
-        for(int i=0;i<s.length();i++){
+        int[] map = new int[256];
+        int max = 0;
+        int left = 0;
+        for (int i = 0; i < s.length(); i++) {
             //想不通 map[s.charAt(i)]<left
-            if(map[s.charAt(i)]==0||map[s.charAt(i)]<left){
-                max=Math.max(max,i-left+1);
-            }else{
-
-                left=map[s.charAt(i)];
+            if (map[s.charAt(i)] == 0 || map[s.charAt(i)] < left) {
+                max = Math.max(max, i - left + 1);
+            } else {
+                left = map[s.charAt(i)];
             }
-            map[s.charAt(i)]=i+1;
+            map[s.charAt(i)] = i + 1;
         }
         return max;
     }
+
     public int lengthOfLongestSubstring1(String s) {
-        if(s==null||s.length()==0){
+        if (s == null || s.length() == 0) {
             return 0;
         }
         //记录字符上一次出现的位置的后一个位置,该位置有可能成为下一个left的值
-        int[] map=new int[256];
-        int max=0;
-        int left=0;
-        for(int i=0;i<s.length();i++){
-            left=Math.max(left,map[s.charAt(i)]);
-            System.out.println("left:"+left);
-            max=Math.max(max,i-left+1);
-            map[s.charAt(i)]=i+1;
+        int[] map = new int[256];
+        int max = 0;
+        int left = 0;
+        for (int i = 0; i < s.length(); i++) {
+            left = Math.max(left, map[s.charAt(i)]);
+            System.out.println("left:" + left);
+            max = Math.max(max, i - left + 1);
+            map[s.charAt(i)] = i + 1;
         }
         return max;
     }
-    public int lengthOfLongestSubstring2(String s){
-        if(s==null||s.length()==0){
+
+    public int lengthOfLongestSubstring2(String s) {
+        if (s == null || s.length() == 0) {
             return 0;
         }
-        HashMap<Character,Integer> map=new HashMap<>();
-        int left=0;
-        int max=0;
-        for(int i=0;i<s.length();i++){
+        HashMap<Character, Integer> map = new HashMap<>();
+        int left = 0;
+        int max = 0;
+        for (int i = 0; i < s.length(); i++) {
             //map.get(s.charAt(i))
             //Exception in thread "main" java.lang.NullPointerException
-            left=Math.max(left,map.containsKey(s.charAt(i))?map.get(s.charAt
-                    (i)):0);
-            System.out.println("left:"+left);
-            max=Math.max(max,i-left+1);
-            map.put(s.charAt(i),i+1);
+            //记住最左边的位置，如果出现重复字符则将最左边的位置换成该字符的位置
+            left = Math.max(left, map.containsKey(s.charAt(i)) ? map.get(s.charAt
+                    (i)) : 0);
+//            System.out.println("left:"+left);
+            max = Math.max(max, i - left + 1);
+            map.put(s.charAt(i), i + 1);
 
         }
         return max;
     }
-    public static void main(String[] args){
-        String s="abcabcdb";
+
+    public static void main(String[] args) {
+        String s = "abcabcdb";
         String
-        s1="wlrbbmqbhcdarzowkkyhiddqscdxrjmowfrxsjybldbefsarcbynecdyggxxpklorell" +
+                s1 = "wlrbbmqbhcdarzowkkyhiddqscdxrjmowfrxsjybldbefsarcbynecdyggxxpklorell" +
                 "nmpapqfwkhopkmco";
-        LongestSubstringWithoutRepeatingCharacters test=new
-                LongestSubstringWithoutRepeatingCharacters();
+        _3_LongestSubstringWithoutRepeatingCharacters test = new
+                _3_LongestSubstringWithoutRepeatingCharacters();
         /*System.out.println(test.lengthOfLongestSubstring(s));
         System.out.println(test.lengthOfLongestSubstring1(s1));
         System.out.println(test.lengthOfLongestSubstring1(s));

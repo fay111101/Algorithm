@@ -2,73 +2,75 @@ package leetcode.array;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
-/* Given an array S of n integers, are there elements a, b, c in S such that a +
- b + c = 0? Find all unique triplets in the array which gives the sum of zero.
+/**
+ * 给定一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，
+ * 使得 a + b + c = 0 ？找出所有满足条件且不重复的三元组。
+ * <p>
+ * 注意：答案中不可以包含重复的三元组。
+ * <p>
+ * 例如, 给定数组 nums = [-1, 0, 1, 2, -1, -4]，
+ * <p>
+ * 满足要求的三元组集合为：
+ * [
+ * [-1, 0, 1],
+ * [-1, -1, 2]
+ * ]
+ */
+public class _15_Sum3 {
 
-Note:
-
-    Elements in a triplet (a,b,c) must be in non-descending order. (ie, a ≤ b ≤ c)
-    The solution set must not contain _51_duplicate triplets.
-
-
-    For example, given array S = {-1 0 1 2 -1 -4},
-
-    A solution set is:
-    (-1, 0, 1)
-    (-1, -1, 2)
-*/
-public class Sum3 {
-    public ArrayList<ArrayList<Integer>> threeSum(int[] num) {
-        ArrayList<ArrayList<Integer>> result=new ArrayList<>();
-        Arrays.sort(num);
-        for(int k=0;k<num.length;k++){
-            int target=0-num[k];
-            int i=k+1,j=num.length-1;
-            if (k != 0 && num[k] == num[k - 1]) {
+    public List<List<Integer>> threeSum(int[] nums) {
+        List<List<Integer>> result = new ArrayList<>();
+        Arrays.sort(nums);
+        for (int k = 0; k < nums.length; k++) {
+            int target = 0 - nums[k];
+            int i = k + 1, j = nums.length - 1;
+            if (k != 0 && nums[k] == nums[k - 1]) {
                 continue;
             }
-            while(i<j){
-                if((num[i]+num[j])==target){
-                    ArrayList<Integer> res=new ArrayList<>();
-                    res.add(num[k]);
-                    res.add(num[i]);
-                    res.add(num[j]);
+            while (i < j) {
+                if ((nums[i] + nums[j]) == target) {
+                    ArrayList<Integer> res = new ArrayList<>();
+                    res.add(nums[k]);
+                    res.add(nums[i]);
+                    res.add(nums[j]);
                     result.add(res);
-                    while(i<j&&num[i]==num[i+1]){
+                    while (i < j && nums[i] == nums[i + 1]) {
                         i++;
                     }
-                    while(i<j&&num[j]==num[j-1]){
+                    while (i < j && nums[j] == nums[j - 1]) {
                         j--;
                     }
                     i++;
                     j--;
-                }else if((num[i]+num[j])<target){
+                } else if ((nums[i] + nums[j]) < target) {
                     i++;
-                }else{
+                } else {
                     j--;
                 }
 
             }
 
         }
-        return  result;
+        return result;
     }
-    public static void main(String[] args){
-        Sum3 test=new Sum3();
-        int[] num={-1, 0 ,1 ,2 ,-1 ,-4};
-        int[] num1={0,0,0,0};
-        int[] num2={-2,0,1,1,2};
-        ArrayList<ArrayList<Integer>> result=test.threeSum(num);
+
+    public static void main(String[] args) {
+        _15_Sum3 test = new _15_Sum3();
+        int[] num = {-1, 0, 1, 2, -1, -4};
+        int[] num1 = {0, 0, 0, 0};
+        int[] num2 = {-2, 0, 1, 1, 2};
+        List<List<Integer>> result = test.threeSum(num);
         /*for(ArrayList<Integer> res:result){
             for(int a:res){
                 System.out.print(a);
             }
             System.out.println();
         }*/
-        ArrayList<ArrayList<Integer>> result1=test.threeSum(num2);
-        for(ArrayList<Integer> res:result1){
-            for(int a:res){
+        List<List<Integer>> result1 = test.threeSum(num2);
+        for (List<Integer> res : result1) {
+            for (int a : res) {
                 System.out.print(a);
             }
             System.out.println();
