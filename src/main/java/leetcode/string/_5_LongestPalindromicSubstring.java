@@ -1,5 +1,9 @@
 package leetcode.string;
 
+/**
+ * 最长回文子串
+ * 
+ */
 public class LongestPalindromicSubstring {
     //leetcode ac
     public String longestPalindrome1(String s) {

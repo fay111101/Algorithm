@@ -7,6 +7,7 @@ If you were only permitted to complete at most one transaction
  design an algorithm to find the maximum profit.
 */
 public class BestTimeToBuyAndSellStock {
+
     public int maxProfit(int[] prices){
         if(prices==null||prices.length==0){
             return 0;

@@ -14,7 +14,8 @@ Output: index1=1, index2=2
 */
 import java.util.HashMap;
 
-public class TwoNums {
+public class _1_TwoNums {
+
     public int[] twoSum(int[] numbers, int target) {
         int[] res=new int[2];
         if(numbers==null||numbers.length==0){
