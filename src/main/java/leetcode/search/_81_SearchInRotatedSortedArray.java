@@ -18,6 +18,7 @@ package leetcode.search;
  * 进阶:
  *
  * 这是 搜索旋转排序数组 的延伸题目，本题中的 nums  可能包含重复元素。
+ * 如01111 10111 11101
  * 这会影响到程序的时间复杂度吗？会有怎样的影响，为什么？
  *
  * 允许重复元素，如果A[m]>=A[l], 那么[l,m] 为递增序列的假设就不能成立了，比
@@ -39,21 +40,30 @@ public class _81_SearchInRotatedSortedArray {
                 return true;
             }
             if(nums[mid]>nums[left]){
-                if(target<=nums[right]&&target>nums[mid]){
-                    left=mid+1;
-                }else{
-                    right=mid-1;
-                }
-            }else if(nums[mid]<nums[left]){
                 if(target>=nums[left]&&target<nums[mid]){
                     right=mid-1;
                 }else{
                     left=mid+1;
+                }
+            }else if(nums[mid]<nums[left]){
+                if(target<nums[left]&&target>nums[mid]){
+                    left=mid+1;
+                }else{
+                    right=mid-1;
                 }
             }else{
                 left++;
             }
         }
         return false;
+    }
+
+    public static void main(String[] args) {
+//        int[] a={2,5,6,0,0,1,2};
+        int[] a={1,3,5};
+        int target=1;
+//        int target=3;
+        _81_SearchInRotatedSortedArray test=new _81_SearchInRotatedSortedArray();
+        System.out.println(test.search(a,target));
     }
 }

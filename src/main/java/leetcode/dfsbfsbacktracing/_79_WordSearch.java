@@ -1,4 +1,8 @@
+<<<<<<< HEAD:src/main/java/leetcode/search/WordSearch.java
 package leetcode.search;
+=======
+package leetcode.dfsbfsbacktracing;
+>>>>>>> 8d9fd232620a92e2f658ded073d959eb094bcaa1:src/main/java/leetcode/dfsbfsbacktracing/_79_WordSearch.java
 
 /**
  *  Given a 2D board and a word, find if the word exists in the grid.
@@ -17,8 +21,29 @@ package leetcode.search;
  word ="ABCCED", -> returnstrue,
  word ="SEE", -> returnstrue,
  word ="ABCB", -> returnsfalse.
+ 给定一个二维网格和一个单词，找出该单词是否存在于网格中。
+
+ 单词必须按照字母顺序，通过相邻的单元格内的字母构成，其中“相邻”单元格是那些水平相邻或垂直相邻的单元格。同一个单元格内的字母不允许被重复使用。
+
+ 示例:
+
+ board =
+ [
+ ['A','B','C','E'],
+ ['S','F','C','S'],
+ ['A','D','E','E']
+ ]
+
+ 给定 word = "ABCCED", 返回 true.
+ 给定 word = "SEE", 返回 true.
+ 给定 word = "ABCB", 返回 false.
+
  */
+<<<<<<< HEAD:src/main/java/leetcode/search/WordSearch.java
 public class WordSearch {
+=======
+public class _79_WordSearch {
+>>>>>>> 8d9fd232620a92e2f658ded073d959eb094bcaa1:src/main/java/leetcode/dfsbfsbacktracing/_79_WordSearch.java
 
     public boolean exist(char[][] board, String word) {
         if(board==null||board.length==0||board[0].length==0){

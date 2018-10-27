@@ -25,7 +25,6 @@ package leetcode.string;
  dp[j][i] str[i]==str[j]&&dp[j+1][i-1] i-j>1
  */
 public class _5_LongestPalindromicSubstring {
-    //
     //leetcode ac
     public String longestPalindrome1(String s) {
         if(s==null){

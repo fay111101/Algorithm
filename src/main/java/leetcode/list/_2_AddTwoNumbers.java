@@ -7,7 +7,11 @@ Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
 Output: 7 -> 0 -> 8
 * */
 public class _2_AddTwoNumbers {
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 8d9fd232620a92e2f658ded073d959eb094bcaa1
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         if(l1==null||l2==null){
             return null;

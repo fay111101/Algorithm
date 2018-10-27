@@ -51,11 +51,11 @@ public class _34_SearchForARange {
     }
 
 
-    public static void main(String[] args) {
-        int[] arr = {5, 7, 7, 8, 8, 10};
-        _34_SearchForARange test = new _34_SearchForARange();
-        int[] res = test.searchRange(arr, 8);
-        for (int i : res) {
+    public static void main(String[] args){
+        int[] arr={5, 7, 7, 8, 8, 10};
+        _34_SearchForARange test=new _34_SearchForARange();
+        int[] res=test.searchRange(arr,8);
+        for(int i:res){
             System.out.println(i);
         }
     }

@@ -13,7 +13,7 @@ Return
  [1,4,6,4,1]
 ]
 */
-public class PascalsTriangle {
+public class _118_PascalsTriangle {
     public ArrayList<ArrayList<Integer>> generate(int numRows) {
         ArrayList<ArrayList<Integer>> result=new ArrayList<>();
         if(numRows==0){

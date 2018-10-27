@@ -1,4 +1,4 @@
-package main.java.leetcode.dynamic;
+package leetcode.dpandgreedy;
 
 /**
  *

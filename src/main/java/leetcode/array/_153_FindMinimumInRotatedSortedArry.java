@@ -24,16 +24,18 @@ public class _153_FindMinimumInRotatedSortedArry {
         if(nums==null||nums.length==0) return -1;
         int mid=0;
         int left=0,right=nums.length-1;
+        //控制nums[left]>=nums[right].使第一个指针永远指向第一个递增子区间，第二个指针永远指向第二个递增子区间
         while(nums[left]>=nums[right]&&left<right){
+            //第一个指针已经到达第一个子区间的末尾
             if(right-left==1){
                 mid=right;
                 break;
             }
             mid=(left+right)>>1;
             if(nums[mid]>nums[left]){
-                left=mid;
+                left=mid+1;
             }else{
-                right=mid;
+                right=mid-1;
             }
         }
 

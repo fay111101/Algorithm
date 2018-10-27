@@ -1,4 +1,4 @@
-package leetcode.dynamic;
+package leetcode.dpandgreedy;
 
 /**
  * Created by fay on 2017/12/15.
@@ -9,7 +9,10 @@ package leetcode.dynamic;
  c) Replace a character
  */
 public class _77_EditDistance {
+<<<<<<< HEAD:src/main/java/leetcode/dynamic/_77_EditDistance.java
 
+=======
+>>>>>>> 8d9fd232620a92e2f658ded073d959eb094bcaa1:src/main/java/leetcode/dpandgreedy/_77_EditDistance.java
     public int minDistance(String word1, String word2) {
         int m=word1.length();
         int n=word2.length();

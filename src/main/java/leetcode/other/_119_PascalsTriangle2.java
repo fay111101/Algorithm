@@ -7,7 +7,7 @@ For example, given k = 3,
 Return[1,3,3,1].
 Note:
 Could you optimize your algorithm to use only O(k) extra space?*/
-public class PascalsTriangle2 {
+public class _119_PascalsTriangle2 {
     public ArrayList<Integer> getRow(int rowIndex) {
         ArrayList<Integer> row=new ArrayList<Integer>();
         rowIndex++;
@@ -25,7 +25,7 @@ public class PascalsTriangle2 {
         return row;
     }
     public  static void main(String[] args){
-        PascalsTriangle2 test=new PascalsTriangle2();
+        _119_PascalsTriangle2 test=new _119_PascalsTriangle2();
         test.getRow(3);
     }
 }

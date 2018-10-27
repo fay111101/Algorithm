@@ -61,7 +61,6 @@ public class _15_Sum3 {
         int[] num = {-1, 0, 1, 2, -1, -4};
         int[] num1 = {0, 0, 0, 0};
         int[] num2 = {-2, 0, 1, 1, 2};
-        List<List<Integer>> result = test.threeSum(num);
         /*for(ArrayList<Integer> res:result){
             for(int a:res){
                 System.out.print(a);
