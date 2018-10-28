@@ -32,6 +32,7 @@ import java.util.Stack;
  * Created by fay on 2017/12/4.
  */
 public class _94_BinaryTreeInorderTraversal {
+
     public ArrayList<Integer> inorderTraversal(TreeNode root) {
         ArrayList<Integer> list = new ArrayList<Integer>();
         if(root == null)

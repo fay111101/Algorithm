@@ -22,7 +22,8 @@ package leetcode.tree;
  以i为根节点时，其左子树构成为[0,...,i-1],其右子树构成为[i+1,...,n]构成
  因此，dp[i] = sigma（dp[0...k] * dp[k+1...i]） 0 <= k < i - 1
  */
-public class UniqueBST {
+public class _96_UniqueBST {
+
     public int numTrees(int n) {
         if(n<0){
             return -1;

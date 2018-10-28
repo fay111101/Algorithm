@@ -19,7 +19,8 @@ package leetcode.tree;
  *  -10  5
  *  输出结果无标准答案
  */
-public class ConvertSortedArrayToBST {
+public class _108_ConvertSortedArrayToBST {
+
     public TreeNode sortedArrayToBST(int[] num){
         if(num==null||num.length==0){
             return null;
@@ -44,7 +45,7 @@ public class ConvertSortedArrayToBST {
     }
     public static void main(String[] args){
         int[] nums={2,4,6,8,9,10};
-        ConvertSortedArrayToBST test=new ConvertSortedArrayToBST();
+        _108_ConvertSortedArrayToBST test=new _108_ConvertSortedArrayToBST();
         TreeNode root=test.sortedArrayToBST(nums);
 
     }

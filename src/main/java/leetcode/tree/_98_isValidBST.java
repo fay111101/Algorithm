@@ -46,4 +46,25 @@ public class _98_isValidBST {
         list.add(root.val);
         inorderBST(root.right,list);
     }
+
+
+    /**
+     * 递归获得每棵树的上下界
+     * @param root
+     * @param low
+     * @param high
+     * @return
+     */
+    public boolean helper(TreeNode root, double low, double high) {
+        if (root.val <= low || root.val >= high) {
+            return false;
+        }
+        if (root.left != null && !helper(root.left, low, root.val)) {
+            return false;
+        }
+        if (root.right != null && !helper(root.right, root.val, high)) {
+            return false;
+        }
+        return true;
+    }
 }

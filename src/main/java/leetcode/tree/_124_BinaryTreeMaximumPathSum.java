@@ -16,7 +16,7 @@ Return6.
 Return11
 注意：树的节点的值root.val可以是负数
 */
-public class BinaryTreeMaximumPathSum {
+public class _124_BinaryTreeMaximumPathSum {
 
     int maxsum=Integer.MIN_VALUE;
     public int maxPathSum(TreeNode root) {
@@ -62,7 +62,7 @@ public class BinaryTreeMaximumPathSum {
         root2 = common.createTrees(arr2);
         root3 = common.createTrees(arr3);
         root4 = common.createTrees(arr4);
-        BinaryTreeMaximumPathSum  test=new BinaryTreeMaximumPathSum();
+        _124_BinaryTreeMaximumPathSum test=new _124_BinaryTreeMaximumPathSum();
         //System.out.println(test.maxPathSum(root1));
         //System.out.println(test.maxPathSum(root2));
         System.out.println(test.maxPathSum(root3));
