@@ -1,4 +1,4 @@
-package leetcode.array;
+package leetcode.search;
 
 /**
  假设按照升序排序的数组在预先未知的某个点上进行了旋转。
@@ -46,6 +46,23 @@ public class _154_FindMinmumInRotateSortedArray2 {
             }
         }
         return min;
+    }
+
+    public int findMin1(int[] nums){
+        int n=nums.length;
+        int l=0,r=n-1,mid;
+        while(l<r){
+            mid=l+(r-l)/2;
+            if(nums[mid]>nums[r]){
+                l=mid+1;
+            }else if(nums[mid]<nums[r]){
+                r=mid;
+            }else{
+                r--;
+            }
+        }
+        //l==r的时候跳出循环，此时这个值为最小值
+        return nums[l];
     }
 
 }
