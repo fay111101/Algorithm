@@ -8,11 +8,8 @@ package leetcode.list;
 
  */
 public class _21_MergeTwoSortedLists {
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> 8d9fd232620a92e2f658ded073d959eb094bcaa1
+
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode dummy=new ListNode(-1);
         ListNode curr=dummy;

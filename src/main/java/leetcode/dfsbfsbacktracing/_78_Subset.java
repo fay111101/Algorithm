@@ -2,16 +2,18 @@ package leetcode.dfsbfsbacktracing;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by fay on 2017/12/13.
- *Given a set of distinct integers, S, return all possible subsets.
- Note:
- Elements in a subset must be in non-descending order.
- The solution set must not contain _51_duplicate subsets.
+ 给定一组不含重复元素的整数数组 nums，返回该数组所有可能的子集（幂集）。
 
- For example,
- If S =[1,2,3], a solution is:
+ 说明：解集不能包含重复的子集。
+
+ 示例:
+
+ 输入: nums = [1,2,3]
+ 输出:
  [
  [3],
  [1],
@@ -22,17 +24,19 @@ import java.util.Arrays;
  [1,2],
  []
  ]
+ https://www.cnblogs.com/zpfbuaa/p/6633986.html
  */
-public class Subset {
-    public ArrayList<ArrayList<Integer>> subsets(int[] S) {
-        ArrayList<ArrayList<Integer>> result=new ArrayList<>();
+public class _78_Subset {
+
+    public List<List<Integer>> subsets(int[] S) {
+        List<List<Integer>> result=new ArrayList<>();
         ArrayList<Integer> res=new ArrayList<>();
         Arrays.sort(S);
         backtracking(S,0,result,res);
         return result;
     }
 
-    private void backtracking(int[] s, int start, ArrayList<ArrayList<Integer>> result,ArrayList<Integer> res) {
+    private void backtracking(int[] s, int start, List<List<Integer>> result,ArrayList<Integer> res) {
         result.add(new ArrayList<>(res));
         for(int i=start;i<s.length;i++ ){
             res.add(s[i]);
@@ -42,10 +46,10 @@ public class Subset {
 
     }
     public static void main(String[] args){
-        Subset test=new Subset();
-        int[] nums={1,2};
-        ArrayList<ArrayList<Integer>> result=test.subsets(nums);
-        for (ArrayList<Integer> res : result) {
+        _78_Subset test=new _78_Subset();
+        int[] nums={1,2,3};
+        List<List<Integer>> result=test.subsets(nums);
+        for (List<Integer> res : result) {
             for (Integer i : res) {
                 System.out.print(i + " ");
             }

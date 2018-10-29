@@ -7,11 +7,6 @@ Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
 Output: 7 -> 0 -> 8
 * */
 public class _2_AddTwoNumbers {
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> 8d9fd232620a92e2f658ded073d959eb094bcaa1
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         if(l1==null||l2==null){
             return null;
@@ -45,14 +40,6 @@ public class _2_AddTwoNumbers {
                 l2=l2.next;
             }
         }
-//        while(l2!=null){
-//            num=l2.val+carry;
-//            carry=num>=10?1:0;
-//            num=num>=10?num-10:num;
-//            curr.next=new ListNode(num);
-//            curr=curr.next;
-//            l2=l2.next;
-//        }
         if(carry!=0){
             curr.next=new ListNode(carry);
         }
@@ -73,7 +60,9 @@ public class _2_AddTwoNumbers {
             if (l1 != null) l1 = l1.next;
             if (l2 != null) l2 = l2.next;
         }
-        if (carry == 1) cur.next = new ListNode(1);
+        if (carry == 1){
+            cur.next = new ListNode(1);
+        }
         return dummy.next;
     }
 

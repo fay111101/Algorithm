@@ -1,8 +1,4 @@
-<<<<<<< HEAD:src/main/java/leetcode/search/WordSearch.java
-package leetcode.search;
-=======
 package leetcode.dfsbfsbacktracing;
->>>>>>> 8d9fd232620a92e2f658ded073d959eb094bcaa1:src/main/java/leetcode/dfsbfsbacktracing/_79_WordSearch.java
 
 /**
  *  Given a 2D board and a word, find if the word exists in the grid.
@@ -39,11 +35,7 @@ package leetcode.dfsbfsbacktracing;
  给定 word = "ABCB", 返回 false.
 
  */
-<<<<<<< HEAD:src/main/java/leetcode/search/WordSearch.java
-public class WordSearch {
-=======
 public class _79_WordSearch {
->>>>>>> 8d9fd232620a92e2f658ded073d959eb094bcaa1:src/main/java/leetcode/dfsbfsbacktracing/_79_WordSearch.java
 
     public boolean exist(char[][] board, String word) {
         if(board==null||board.length==0||board[0].length==0){

@@ -16,11 +16,7 @@ package leetcode.dpandgreedy;
  输出: 7
  解释: 因为路径 1→3→1→1→1 的总和最小。
  */
-<<<<<<< HEAD:src/main/java/leetcode/dynamic/MinmumPathSum.java
-public class MinmumPathSum {
-=======
 public class _64_MinmumPathSum {
->>>>>>> 8d9fd232620a92e2f658ded073d959eb094bcaa1:src/main/java/leetcode/dpandgreedy/_64_MinmumPathSum.java
 
     public int minPathSum(int[][] grid) {
         if(grid==null||grid.length==0||grid[0]==null||grid[0].length==0){

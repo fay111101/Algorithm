@@ -4,18 +4,6 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
-
-<<<<<<< HEAD:src/main/java/leetcode/dfsbfsbacktracing/_126_WordLadder.java
-public class _126_WordLadder {
-    /**
-     * bfs层次遍历的思想
-     *
-     * @param start
-     * @param end
-     * @param dict
-     * @return
-     */
-=======
 /**
  *给定两个单词（beginWord 和 endWord）和一个字典，找到从 beginWord 到 endWord 的最短转换序列的长度。转换需遵循如下规则：
  *
@@ -52,7 +40,6 @@ public class _126_WordLadder {
  */
 public class _127_WordLadder {
 
->>>>>>> 8d9fd232620a92e2f658ded073d959eb094bcaa1:src/main/java/leetcode/dfsbfsbacktracing/_127_WordLadder.java
     public int ladderLength(String start, String end, HashSet<String> dict) {
         if (start == null || end == null || start.length() == 0 || end.length() == 0 || start.length() != end.length())
             return 0;
