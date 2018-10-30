@@ -5,18 +5,24 @@ import java.util.List;
 
 /**
  * Created by fay on 2017/12/11.
- * Given a set of non-overlapping intervals, insert a new interval into the intervals (merge if necessary).
- You may assume that the intervals were initially sorted according to their start times.
- Example 1:
- Given intervals[1,3],[6,9], insert and merge[2,5]in as[1,5],[6,9].
- Example 2:
- Given[1,2],[3,5],[6,7],[8,10],[12,16], insert and merge[4,9]in as[1,2],[3,10],[12,16].
- This is because the new interval[4,9]overlaps with[3,5],[6,7],[8,10].
- https://www.cnblogs.com/splash/p/4249510.html
+ * 给出一个无重叠的 ，按照区间起始端点排序的区间列表。
+
+ 在列表中插入一个新的区间，你需要确保列表中的区间仍然有序且不重叠（如果有必要的话，可以合并区间）。
+
+ 示例 1:
+
+ 输入: intervals = [[1,3],[6,9]], newInterval = [2,5]
+ 输出: [[1,5],[6,9]]
+ 示例 2:
+
+ 输入: intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]], newInterval = [4,8]
+ 输出: [[1,2],[3,10],[12,16]]
+ 解释: 这是因为新的区间 [4,8] 与 [3,5],[6,7],[8,10] 重叠。
  */
-public class InsertInterval {
-    public ArrayList<Interval> insert(ArrayList<Interval> intervals, Interval newInterval) {
-        ArrayList<Interval> list = new ArrayList<Interval>();
+public class _57_InsertInterval {
+
+    public List<Interval> insert(List<Interval> intervals, Interval newInterval) {
+        List<Interval> list = new ArrayList<Interval>();
         //边界情况
         if(intervals.size() == 0){
             list.add(newInterval);
@@ -48,7 +54,7 @@ public class InsertInterval {
         }
         return list;
     }
-    public List<Interval> insert(List<Interval> intervals, Interval newInterval) {
+    public List<Interval> insert1(List<Interval> intervals, Interval newInterval) {
         int start = newInterval.start;
         int end = newInterval.end;
         List<Interval> re = new ArrayList<Interval>(intervals);

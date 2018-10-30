@@ -1,11 +1,16 @@
 package leetcode.list;
 
-/*
-You are given two linked lists representing two non-negative numbers. The digits are stored in reverse order and each of
-their nodes contain a single digit. _47_Add the two numbers and return it as a linked list.
-Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
-Output: 7 -> 0 -> 8
-* */
+/**
+ * 给定两个非空链表来表示两个非负整数。位数按照逆序方式存储，它们的每个节点只存储单个数字。将两数相加返回一个新的链表。
+
+ 你可以假设除了数字 0 之外，这两个数字都不会以零开头。
+
+ 示例：
+
+ 输入：(2 -> 4 -> 3) + (5 -> 6 -> 4)
+ 输出：7 -> 0 -> 8
+ 原因：342 + 465 = 807
+ */
 public class _2_AddTwoNumbers {
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         if(l1==null||l2==null){

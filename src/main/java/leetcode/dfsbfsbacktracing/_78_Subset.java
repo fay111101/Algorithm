@@ -25,14 +25,15 @@ import java.util.List;
  []
  ]
  https://www.cnblogs.com/zpfbuaa/p/6633986.html
+ https://blog.csdn.net/jarvischu/article/details/16067319
  */
 public class _78_Subset {
 
-    public List<List<Integer>> subsets(int[] S) {
+    public List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> result=new ArrayList<>();
         ArrayList<Integer> res=new ArrayList<>();
-        Arrays.sort(S);
-        backtracking(S,0,result,res);
+        Arrays.sort(nums);
+        backtracking(nums,0,result,res);
         return result;
     }
 
