@@ -2,13 +2,13 @@ package leetcode.list;
 
 /**
  * Given a sorted linked list, delete all nodes that have _51_duplicate numbers, leaving only distinct numbers from the original list.
- * <p>
+ *
  * Example 1:
- * <p>
+ *
  * Input: 1->2->3->3->4->4->5
  * Output: 1->2->5
  * Example 2:
- * <p>
+ *
  * Input: 1->1->1->2->3
  * Output: 2->3
  */

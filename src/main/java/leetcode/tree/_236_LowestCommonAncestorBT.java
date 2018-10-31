@@ -5,12 +5,12 @@ import java.util.List;
 
 /**
  * 给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。
- * <p>
+ *
  * 百度百科中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，
  * 满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。”
- * <p>
+ *
  * 例如，给定如下二叉树:  root = [3,5,1,6,2,0,8,null,null,7,4]
- * <p>
+ *
  * _______3______
  * /              \
  * ___5__          ___1__
@@ -19,17 +19,17 @@ import java.util.List;
  * /  \
  * 7   4
  * 示例 1:
- * <p>
+ *
  * 输入: root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 1
  * 输出: 3
  * 解释: 节点 5 和节点 1 的最近公共祖先是节点 3。
  * 示例 2:
- * <p>
+ *
  * 输入: root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 4
  * 输出: 5
  * 解释: 节点 5 和节点 4 的最近公共祖先是节点 5。因为根据定义最近公共祖先节点可以为节点本身。
  * 说明:
- * <p>
+ *
  * 所有节点的值都是唯一的。
  * p、q 为不同节点且均存在于给定的二叉树中。
  * https://blog.csdn.net/qq_26437925/article/details/72627847
@@ -79,7 +79,7 @@ public class _236_LowestCommonAncestorBT {
 
     /**
      * 遍历二叉树时，只有先访问给定两节点A、B后，才可能确定其最近共同父节点C，因而采用后序遍历。
-     * <p>
+     *
      * 可以统计任一节点的左右子树“是否包含A、B中的某一个”（也可以直接统计“包含了几个A、B”）。
      * 当后序遍历访问到某个节点D时，可得到三条信息：
      * (1）节点D是否是A、B两节点之一、（2）其左子树是否包含A、B两节点之一、
@@ -186,7 +186,7 @@ public class _236_LowestCommonAncestorBT {
 /**
  * class Solution {
  * public:
- * <p>
+ *
  * bool lca(TreeNode *root, TreeNode* va, TreeNode* vb, TreeNode *&result)
  * {
  * // left/right 左/右子树是否含有要判断的两节点之一
@@ -195,27 +195,27 @@ public class _236_LowestCommonAncestorBT {
  * left = lca(root->left,va,vb,result);
  * if (!result && root->right != NULL)
  * right = lca(root->right,va,vb,result);
- * <p>
+ *
  * // mid 当前节点是否是要判断的两节点之一
  * bool mid = false;
  * if (root == va || root == vb)
  * mid = true;
- * <p>
+ *
  * if (!result && int(left + right + mid) == 2)
  * {
  * result = root;// root就是后序遍历（左，右，根），当前遍历的那个节点
  * }
  * return left | mid | right ;
  * }
- * <p>
+ *
  * TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q)
  * {
  * if (root == NULL)
  * return NULL;
- * <p>
+ *
  * TreeNode *result = NULL;
  * lca(root, p, q,result);
- * <p>
+ *
  * return result;
  * }
  * };

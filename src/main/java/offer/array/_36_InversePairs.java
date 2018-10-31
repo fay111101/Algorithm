@@ -13,10 +13,10 @@ import java.util.Arrays;
  * 对于%100的数据,size<=2*10^5
  * 示例1
  * 输入
- * <p>
+ *
  * 1,2,3,4,5,6,7,0
  * 输出
- * <p>
+ *
  * 7
  */
 public class _36_InversePairs {

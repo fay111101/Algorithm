@@ -4,27 +4,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by fay on 2017/12/12.
- * Given a collection of numbers, return all possible permutations.
- * For example,
- * [1,2,3]have the following permutations:
- * [1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2], and[3,2,1].
- * http://blog.csdn.net/feliciafay/article/details/41349783
- * http://www.geeksforgeeks.org/write-a-c-program-to-print-all-permutations-of-a-given-string/
+ * 给定一个没有重复数字的序列，返回其所有可能的全排列。
+ * <p>
+ * 示例:
+ * <p>
+ * 输入: [1,2,3]
+ * 输出:
+ * [
+ * [1,2,3],
+ * [1,3,2],
+ * [2,1,3],
+ * [2,3,1],
+ * [3,1,2],
+ * [3,2,1]
+ * ]
  */
-public class Permutations {
-    public ArrayList<ArrayList<Integer>> permute1(int[] num) {
-        ArrayList<ArrayList<Integer>> result = new ArrayList<>();
-        ArrayList<Integer> res = new ArrayList<>();
+public class _46_Permutations {
+
+    public List<List<Integer>> permute1(int[] num) {
+        List<List<Integer>> result = new ArrayList<>();
+        List<Integer> res = new ArrayList<>();
         int level = 0;
-        backtracking(num, level,num.length-1,result);
+        backtracking(num, level, num.length - 1, result);
         return result;
     }
 
-    private void backtracking(int[] num, int level, int n,ArrayList<ArrayList<Integer>> result) {
+    private void backtracking(int[] num, int level, int n, List<List<Integer>> result) {
         if (level == n) {
-            ArrayList<Integer> res=new ArrayList<>();
-            for(int i:num){
+            List<Integer> res = new ArrayList<>();
+            for (int i : num) {
                 res.add(i);
             }
             result.add(res);
@@ -37,19 +45,23 @@ public class Permutations {
         }
 
     }
+
     public void swap(int[] num, int i, int j) {
         int temp = num[i];
         num[i] = num[j];
         num[j] = temp;
     }
-    ArrayList<ArrayList<Integer>> result = new ArrayList<>();
-    public ArrayList<ArrayList<Integer>> permute(int[] nums) {
-        if (nums == null || nums.length == 0){
+
+    List<List<Integer>> result = new ArrayList<>();
+
+    public List<List<Integer>> permute(int[] nums) {
+        if (nums == null || nums.length == 0) {
             return result;
         }
         dfs(nums, 0, new ArrayList<Integer>());
         return result;
     }
+
     void dfs(int[] nums, int start, List<Integer> list) {
         if (start == nums.length) {
             result.add(new ArrayList<Integer>(list));
@@ -63,9 +75,10 @@ public class Permutations {
             }
         }
     }
+
     public static void main(String[] args) {
-        Permutations test = new Permutations();
-        ArrayList<ArrayList<Integer>> result = new ArrayList<>();
+        _46_Permutations test = new _46_Permutations();
+        List<List<Integer>> result = new ArrayList<>();
         int[] num = {1, 2, 3};
         /*java.util.Arrays$ArrayList cannot be cast to java.util.ArrayList
             List res=Arrays.asList(num);
@@ -75,8 +88,8 @@ public class Permutations {
        /* ArrayList<ArrayList<String>> stuff = new ArrayList<ArrayList<String>>();
         String[] titles = {"ticker", "grade", "score"};
         stuff.add(new ArrayList<String>(Arrays.asList(titles)));*/
-        result=test.permute1(num);
-        for (ArrayList<Integer> res : result) {
+        result = test.permute1(num);
+        for (List<Integer> res : result) {
             for (Integer i : res) {
                 System.out.print(i + " ");
             }

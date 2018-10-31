@@ -2,7 +2,7 @@ package leetcode.list;
 
 /**
  * Created by fay on 2017/12/7.
- * <p>
+ *
  * Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes
  * of the first two lists.
  */

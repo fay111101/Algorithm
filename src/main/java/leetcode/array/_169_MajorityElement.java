@@ -2,15 +2,15 @@ package leetcode.array;
 
 /**
  * Given an array of size n, find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times.
- * <p>
+ *
  * You may assume that the array is non-empty and the majority element always exist in the array.
- * <p>
+ *
  * Example 1:
- * <p>
+ *
  * Input: [3,2,3]
  * Output: 3
  * Example 2:
- * <p>
+ *
  * Input: [2,2,1,1,1,2,2]
  * Output: 2
  */
@@ -22,7 +22,7 @@ package leetcode.array;
  * 因为众数是出现次数大于n/2的数字，所以排序之后中间的那个数字一定是众数。即nums[n/2]为众数。时间复杂度即排序的时间复杂度。
  * 3.剑指offer思想
  * 每找出两个不同的element，则成对删除。最终剩下的一定就是所求的。
- * <p>
+ *
  * 可扩展到⌊ n/k ⌋的情况，每k个不同的element进行成对删除。
  * 3.分治法
  * 分治法是将整个问题化简为一个一个的小问题去解，将数组分成简单的几部分，比如讲一组数分为两部分，第一部分的众数如果等于第二部分的众数，
