@@ -1,6 +1,7 @@
 package leetcode.dfsbfsbacktracing;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -27,6 +28,7 @@ public class _90_Subset2 {
     public List<List<Integer>> subsetsWithDup(int[] num) {
         List<List<Integer>> result = new ArrayList<>();
         List<Integer> res = new ArrayList<>();
+        Arrays.sort(num);
         backtracking(num, 0, res, result);
         return result;
     }

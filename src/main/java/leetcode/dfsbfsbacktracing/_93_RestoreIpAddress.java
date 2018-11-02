@@ -4,12 +4,14 @@ import java.util.ArrayList;
 
 /**
  * Created by fay on 2017/12/6.
- * Given a string containing only digits, restore it by returning all possible valid IP address combinations.
+ * Given a string containing only digits, restore it by returning all possible valid
+ * IP address combinations.
  For example:
  Given"25525511135",
  return["255.255.11.135", "255.255.111.35"]. (Order does not matter)
  */
-public class RestoreIpAddress {
+public class _93_RestoreIpAddress {
+
     public ArrayList<String> restoreIpAddresses(String s) {
         ArrayList<String> result=new ArrayList<>();
         String res=new String();
@@ -45,7 +47,7 @@ public class RestoreIpAddress {
         return false;
     }
     public static void main(String[] args){
-        RestoreIpAddress test=new RestoreIpAddress();
+        _93_RestoreIpAddress test=new _93_RestoreIpAddress();
         ArrayList<String> result=test.restoreIpAddresses("25525511135");
         for(String s:result){
             System.out.println(s);

@@ -20,6 +20,7 @@ import java.util.List;
  * ]
  */
 public class _47_Permutations2 {
+
     public List<List<Integer>> permuteUnique(int[] num) {
         List<List<Integer>> result = new ArrayList<>();
         HashSet<ArrayList<Integer>> res = new HashSet<>();

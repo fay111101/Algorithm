@@ -88,7 +88,7 @@ public class _46_Permutations {
        /* ArrayList<ArrayList<String>> stuff = new ArrayList<ArrayList<String>>();
         String[] titles = {"ticker", "grade", "score"};
         stuff.add(new ArrayList<String>(Arrays.asList(titles)));*/
-        result = test.permute1(num);
+        result = test.permute(num);
         for (List<Integer> res : result) {
             for (Integer i : res) {
                 System.out.print(i + " ");

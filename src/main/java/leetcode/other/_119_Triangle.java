@@ -19,6 +19,7 @@ import java.util.List;
  * 你可以优化你的算法到 O(k) 空间复杂度吗？
  */
 public class _119_Triangle {
+
     public List<Integer> getRow(int rowIndex) {
         List<Integer> list=new ArrayList<Integer>();
 
