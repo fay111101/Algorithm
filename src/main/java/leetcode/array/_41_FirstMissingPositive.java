@@ -1,15 +1,26 @@
 package leetcode.array;
 
 /**
- * Created by fay on 2017/12/8.
- * Given an unsorted integer array, find the first missing positive integer.
- For example,
- Given[1,2,0]return3,
- and[3,4,-1,1]return2.
- Your algorithm should run in O(n) time and uses constant space.
+ * 给定一个未排序的整数数组，找出其中没有出现的最小的正整数。
 
+ 示例 1:
+
+ 输入: [1,2,0]
+ 输出: 3
+ 示例 2:
+
+ 输入: [3,4,-1,1]
+ 输出: 2
+ 示例 3:
+
+ 输入: [7,8,9,11,12]
+ 输出: 1
+ 说明:
+
+ 你的算法的时间复杂度应为O(n)，并且只能使用常数级别的空间。
  */
-public class FirstMissingPositive {
+public class _41_FirstMissingPositive {
+
     public int firstMissingPositive(int[] A) {
         if(A.length==0){
             return 1;
@@ -33,7 +44,7 @@ public class FirstMissingPositive {
         return n+1;
     }
     public static void main(String[] args){
-        FirstMissingPositive test=new FirstMissingPositive();
+        _41_FirstMissingPositive test=new _41_FirstMissingPositive();
         int[] a={3,4,-1,1};
         test.firstMissingPositive(a);
     }

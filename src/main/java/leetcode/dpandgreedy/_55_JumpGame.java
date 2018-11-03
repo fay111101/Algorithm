@@ -1,4 +1,4 @@
-package main.java.leetcode.dpandgreedy;
+package leetcode.dpandgreedy;
 
 /**
  * 给定一个非负整数数组，你最初位于数组的第一个位置。
@@ -20,14 +20,14 @@ package main.java.leetcode.dpandgreedy;
  */
 public class _55_JumpGame {
 
-    public boolean canJump(int[] A) {
-        if (A == null || A.length == 0) {
+    public boolean canJump(int[] nums) {
+        if (nums == null || nums.length == 0) {
             return false;
         }
-        int n = A.length;
+        int n = nums.length;
         int[] dp = new int[n];
         for (int i = 1; i < n; i++) {
-            dp[i] = Math.max(dp[i - 1], A[i - 1]) - 1;
+            dp[i] = Math.max(dp[i - 1], nums[i - 1]) - 1;
             if (dp[i] < 0) {
                 return false;
             }

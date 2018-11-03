@@ -1,25 +1,27 @@
 package leetcode.dpandgreedy;
 
 /**
- *
- Implement wildcard pattern matching with support for'?'and'*'.
+ * 给定一个非空字符串 s 和一个包含非空单词列表的字典 wordDict，判定 s 是否可以被空格拆分为一个或多个在字典中出现的单词。
 
- '?' Matches any single character.
- '*' Matches any sequence of characters (including the empty sequence).
+ 说明：
 
- The matching should cover the entire input string (not partial).
+ 拆分时可以重复使用字典中的单词。
+ 你可以假设字典中没有重复的单词。
+ 示例 1：
 
- The function prototype should be:
- bool isMatch(const char *s, const char *p)
+ 输入: s = "leetcode", wordDict = ["leet", "code"]
+ 输出: true
+ 解释: 返回 true 因为 "leetcode" 可以被拆分成 "leet code"。
+ 示例 2：
 
- Some examples:
- isMatch("aa","a") → false
- isMatch("aa","aa") → true
- isMatch("aaa","aa") → false
- isMatch("aa", "*") → true
- isMatch("aa", "a*") → true
- isMatch("ab", "?*") → true
- isMatch("aab", "c*a*b") → false
+ 输入: s = "applepenapple", wordDict = ["apple", "pen"]
+ 输出: true
+ 解释: 返回 true 因为 "applepenapple" 可以被拆分成 "apple pen apple"。
+ 注意你可以重复使用字典中的单词。
+ 示例 3：
+
+ 输入: s = "catsandog", wordDict = ["cats", "dog", "sand", "and", "cat"]
+ 输出: false
  */
 public class WildcardMatching {
 

@@ -2,23 +2,28 @@ package leetcode.dpandgreedy;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
-/*Given a string s, partition s such that every substring of the partition is a
- palindrome.
-Return all possible palindrome partitioning of s.
-For example, given s ="aab",
-Return
-  [
-    ["aa","b"],
-    ["a","a","b"]
-  ]*/
-public class PalindromePartitioning {
+/**
+ * 给定一个字符串 s，将 s 分割成一些子串，使每个子串都是回文串。
+ * <p>
+ * 返回 s 所有可能的分割方案。
+ * <p>
+ * 示例:
+ * <p>
+ * 输入: "aab"
+ * 输出:
+ * [
+ * ["aa","b"],
+ * ["a","a","b"]
+ * ]
+ */
+public class _131_PalindromePartitioning {
 
-    public static ArrayList<ArrayList<String>> partition(String s) {
+    public static List<List<String>> partition(String s) {
         int[][] dp = new int[s.length()][s.length()];
-        ArrayList<ArrayList<String>> result = new
-                ArrayList<ArrayList<String>>();
-        ArrayList<String> r = new ArrayList<String>();
+        List<List<String>> result = new ArrayList<>();
+        List<String> r = new ArrayList<String>();
         for (int i = 0; i < s.length(); i++) {
             for (int j = i; j < s.length(); j++) {
                 int k = 0;
@@ -35,10 +40,10 @@ public class PalindromePartitioning {
         return result;
     }
 
-    public static void dfs(int i, String s, int[][] dp, ArrayList<String> r,
-                           ArrayList<ArrayList<String>> result) {
+    public static void dfs(int i, String s, int[][] dp, List<String> r,
+                           List<List<String>> result) {
         if (i == s.length()) {
-            ArrayList<String> t = new ArrayList<String>(r);
+            List<String> t = new ArrayList<String>(r);
             Collections.reverse(t);
             result.add(t);
             return;
@@ -52,6 +57,7 @@ public class PalindromePartitioning {
             }
         }
     }
+
     public static boolean isPalindrome1(String s) {
         int len = s.length(), index = 0;
         if (len == 1) {
@@ -108,8 +114,8 @@ public class PalindromePartitioning {
         System.out.println(isPalindrome1(str));*/
         String s = "eaba";
         StringBuffer sb = new StringBuffer(s);
-        ArrayList<ArrayList<String>> result = partition(s);
-        for (ArrayList<String> res : result) {
+        List<List<String>> result = partition(s);
+        for (List<String> res : result) {
             for (String s1 : res) {
                 System.out.println(s1);
             }
