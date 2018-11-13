@@ -32,6 +32,7 @@ package leetcode.tree;
  *  二叉平衡树为该二叉树中任意节点的左右字数的深度之差都不大于1.
  */
 public class _110_BalancedBinaryTree {
+
     public boolean isBalanced(TreeNode root){
         if(root==null){
             return true;

@@ -1,6 +1,7 @@
 package leetcode.tree;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 /**
@@ -33,8 +34,8 @@ import java.util.Stack;
  */
 public class _94_BinaryTreeInorderTraversal {
 
-    public ArrayList<Integer> inorderTraversal(TreeNode root) {
-        ArrayList<Integer> list = new ArrayList<Integer>();
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> list = new ArrayList<Integer>();
         if(root == null)
             return list;
         Stack<TreeNode> stack = new Stack<TreeNode>();

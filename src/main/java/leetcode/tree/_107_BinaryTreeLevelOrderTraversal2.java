@@ -23,9 +23,10 @@ return its bottom-up level order traversal as:
 confused what"{1,#,2,3}"means? > read more on how binary tree is serialized on
  OJ.*/
 public class _107_BinaryTreeLevelOrderTraversal2 {
-    public  ArrayList<ArrayList<Integer>> levelOrderBottom(TreeNode root) {
 
-        ArrayList<ArrayList<Integer>> result=new ArrayList<>();
+    public  List<List<Integer>> levelOrderBottom(TreeNode root) {
+
+        List<List<Integer>> result=new ArrayList<>();
         if(root==null){
             return result;
         }
@@ -102,8 +103,8 @@ public class _107_BinaryTreeLevelOrderTraversal2 {
         int array[] = {23,10,0,88,0,0,15,0,34,0,0};
         _107_BinaryTreeLevelOrderTraversal2 test=new
                 _107_BinaryTreeLevelOrderTraversal2();
-        ArrayList<ArrayList<Integer>> res=test.levelOrderBottom(root);
-        for(ArrayList<Integer> arr:res){
+        List<List<Integer>> res=test.levelOrderBottom(root);
+        for(List<Integer> arr:res){
             System.out.println("level");
             //System.out.println(arr.size());
 

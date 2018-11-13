@@ -50,7 +50,7 @@ public class _111_MinimumDepthofBinary {
         else if(root.right==null) return minDepth(root.left)+1;
         else return 1+Math.min(minDepth(root.left),minDepth(root.right));
     }
-    public int run1(TreeNode root) {
+    public int minDepth1(TreeNode root) {
         if (root == null) {
             return 0;
         }
@@ -85,7 +85,7 @@ public class _111_MinimumDepthofBinary {
         return high;
     }
 
-    public int run2(TreeNode root) {
+    public int minDepth2(TreeNode root) {
         if (root == null) {
             return 0;
         }
@@ -139,7 +139,7 @@ public class _111_MinimumDepthofBinary {
         root = common.createTrees(arr1);
         _111_MinimumDepthofBinary min = new _111_MinimumDepthofBinary();
         int high = min.minDepth(root);
-//        int high = min.run2(root);
+//        int high = min.minDepth2(root);
         System.out.println(high);
 
     }

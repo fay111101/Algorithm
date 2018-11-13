@@ -25,6 +25,7 @@ public class _33_SearchInRotatedSortedArray {
             if (nums[mid] == target) {
                 return mid;
             }
+            //左边是有序区域
             if (nums[mid] >= nums[left]) {
                 if (nums[mid] > target && nums[left] <=target) {
                     right = mid - 1;
@@ -32,6 +33,7 @@ public class _33_SearchInRotatedSortedArray {
                     left = mid + 1;
                 }
             } else {
+                //右边是有序区域
                 if (nums[mid] < target && nums[right] >=target) {
                     left = mid + 1;
                 } else {

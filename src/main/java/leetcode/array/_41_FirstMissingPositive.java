@@ -21,23 +21,23 @@ package leetcode.array;
  */
 public class _41_FirstMissingPositive {
 
-    public int firstMissingPositive(int[] A) {
-        if(A.length==0){
+    public int firstMissingPositive(int[] nums) {
+        if(nums.length==0){
             return 1;
         }
-        int n=A.length,i=0;
+        int n=nums.length,i=0;
         while(i<n){
-            if(A[i]!=i+1&&(A[i]>0&&A[i]<=n)&&A[i]!=A[A[i]-1]){
-                int temp=A[A[i]-1];
-                A[A[i]-1]=A[i];
-                A[i]=temp;
+            if(nums[i]!=i+1&&(nums[i]>0&&nums[i]<=n)&&nums[i]!=nums[nums[i]-1]){
+                int temp=nums[nums[i]-1];
+                nums[nums[i]-1]=nums[i];
+                nums[i]=temp;
             }else{
                 i++;
             }
 
         }
         for(i=0;i<n;i++){
-            if(A[i]!=i+1){
+            if(nums[i]!=i+1){
                 return i+1;
             }
         }

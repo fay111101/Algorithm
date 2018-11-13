@@ -2,11 +2,26 @@ package leetcode.string;
 
 import java.util.HashMap;
 
-/*Given a string, find the length of the longest substring
-without repeating characters. For example, the longest substring
- without repeating letters for "abcabcbb" is "abc", which the
- length is 3. For "bbbbb" the longest substring is "b", with the
- length of 1. */
+/**
+ * 给定一个字符串，找出不含有重复字符的最长子串的长度。
+
+ 示例 1:
+
+ 输入: "abcabcbb"
+ 输出: 3
+ 解释: 无重复字符的最长子串是 "abc"，其长度为 3。
+ 示例 2:
+
+ 输入: "bbbbb"
+ 输出: 1
+ 解释: 无重复字符的最长子串是 "b"，其长度为 1。
+ 示例 3:
+
+ 输入: "pwwkew"
+ 输出: 3
+ 解释: 无重复字符的最长子串是 "wke"，其长度为 3。
+ 请注意，答案必须是一个子串，"pwke" 是一个子序列 而不是子串。
+ */
 
 
 public class _3_LongestSubstringWithoutRepeatingCharacters {
@@ -15,7 +30,7 @@ public class _3_LongestSubstringWithoutRepeatingCharacters {
         if (s == null || s.length() == 0) {
             return 0;
         }
-        //记录字符上一次出现的位置的后一个位置
+        //记录字符上一次出现的位置
         int[] map = new int[256];
         int max = 0;
         int left = 0;

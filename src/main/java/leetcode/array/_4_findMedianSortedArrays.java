@@ -22,33 +22,33 @@ package leetcode.array;
  */
 public class _4_findMedianSortedArrays {
 
-    public double findMedianSortedArrays(int A[], int B[]) {
+    public double findMedianSortedArrays(int nums1[], int nums2[]) {
         double mid = 0.0;
-        int m = A.length;
-        int n = B.length;
-        if (A == null || B == null || m + n == 0) {
+        int m = nums1.length;
+        int n = nums2.length;
+        if (nums1 == null || nums2 == null || m + n == 0) {
             return mid;
         }
         int[] C = new int[m + n];
         int i = 0, j = 0, k = 0;
         while (i < m && j < n) {
-            if (A[i] < B[j]) {
-                C[k] = A[i];
+            if (nums1[i] < nums2[j]) {
+                C[k] = nums1[i];
                 k++;
                 i++;
             } else {
-                C[k] = B[j];
+                C[k] = nums2[j];
                 k++;
                 j++;
             }
         }
         while (j < n) {
-            C[k] = B[j];
+            C[k] = nums2[j];
             k++;
             j++;
         }
         while (i < m) {
-            C[k] = A[i];
+            C[k] = nums1[i];
             k++;
             i++;
         }

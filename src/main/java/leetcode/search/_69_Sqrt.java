@@ -1,4 +1,4 @@
-package leetcode.dfsbfsbacktracing;
+package leetcode.search;
 
 /**
  * 实现 int sqrt(int x) 函数。
@@ -18,7 +18,7 @@ package leetcode.dfsbfsbacktracing;
  * 说明: 8 的平方根是 2.82842...,
  * 由于返回类型是整数，小数部分将被舍去。
  */
-public class _69_Sqrtx {
+public class _69_Sqrt {
 
     public int mySqrt(int x) {
         long left = 0, right = (x / 2) + 1;
