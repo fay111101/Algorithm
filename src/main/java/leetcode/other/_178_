@@ -1,0 +1,28 @@
+# Write your MySQL query statement below
+
+# 对于每一个分数，找出表中有多少个大于或等于该分数的不同的分数，然后按降序排列即可
+# sql语句的执行过程：
+其中select和from是必须的，其他关键词是可选的，这六个关键词的执行顺序
+与sql语句的书写顺序并不是一样的，而是按照下面的顺序来执行
+from--where--group by--having--select--order by,
+from:需要从哪个数据表检索数据
+where:过滤表中数据的条件
+group by:如何将上面过滤出的数据分组
+having:对上面已经分组的数据进行过滤的条件
+select:查看结果集中的哪个列，或列的计算结果
+order by :按照什么样的顺序来查看返回的数据
+
+select Score,(select count(distinct Score)from Scores where Score >=s.Score) Rank
+from Scores s order by Score DESC;
+
+
+SELECT Score,
+(
+  SELECT COUNT(*) FROM (
+    SELECT DISTINCT Score S
+    FROM Scores
+  ) AS Tmp
+  WHERE S >= Score
+) AS Rank
+FROM Scores
+ORDER BY Score DESC;

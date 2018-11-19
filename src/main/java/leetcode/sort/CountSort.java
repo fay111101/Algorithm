@@ -13,6 +13,7 @@ package leetcode.sort;
  */
 
 public class CountSort{
+
     public static void countSort(int[] arr,int k){
         int[] count=new int[k];
         for(int i:arr){
@@ -23,7 +24,7 @@ public class CountSort{
         }
         int[] arrNew=new int[arr.length];
         for(int j=arr.length-1;j>=0;j--){
-            arrNew[count[arr[j]]-1]=arrNew[j];
+            arrNew[count[arr[j]]-1]=arr[j];
             count[arr[j]]--;
         }
         System.arraycopy(arrNew,0,arr,0,arr.length);

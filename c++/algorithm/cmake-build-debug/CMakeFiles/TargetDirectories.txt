@@ -1,0 +1,3 @@
+/home/fay/project/c++/algorithm/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/fay/project/c++/algorithm/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/fay/project/c++/algorithm/cmake-build-debug/CMakeFiles/algorithm.dir

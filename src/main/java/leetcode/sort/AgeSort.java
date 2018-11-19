@@ -21,7 +21,7 @@ public class AgeSort {
         int youngAge = 20;
 
         // 初始化一个odlAge+1的数组
-        int[] timeOfAge = new int[oldAge + 1];
+        int[] timeOfAge = new int[oldAge -youngAge];
         // 将数组元素都置为0
         for (int i = 0; i < timeOfAge.length; i++) {
             timeOfAge[i] = 0;

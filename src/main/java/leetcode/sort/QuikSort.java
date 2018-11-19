@@ -77,11 +77,11 @@ public class QuikSort {
         int base = arr[low];
 
         while (low < high) {
-            while (low < high && arr[high] >= base) {
+            while (low < high && arr[high] <= base) {
                 high--;
             }
             arr[low] = arr[high];
-            while (low < high && arr[low] <= base) {
+            while (low < high && arr[low] >= base) {
                 low++;
             }
             arr[high] = arr[low];
@@ -92,8 +92,8 @@ public class QuikSort {
 
     int[] quickSort(int[] arr, int low, int high) {
         if (low < high) {
-//            int base = partition1(arr, low, high);
-            int base = partition(arr, low, high);
+            int base = partition1(arr, low, high);
+//            int base = partition(arr, low, high);
             quickSort(arr, 0, base - 1);
             quickSort(arr, base + 1, high);
         }
@@ -197,8 +197,8 @@ public class QuikSort {
         int[] arr = {49, 38, 65, 97, 76, 13, 27, 49,-1,-3};
         QuikSort qs = new QuikSort();
 
-//        qs.quickSort(arr, 0, arr.length - 1);
-        qs.quickSort2(arr, 0, arr.length - 1);
+        qs.quickSort(arr, 0, arr.length - 1);
+//        qs.quickSort2(arr, 0, arr.length - 1);
 //        qs.quickSort0(arr, 0, arr.length - 1);
         for (int num : arr) {
             System.out.println(num);
