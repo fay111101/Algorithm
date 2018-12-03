@@ -5,7 +5,8 @@
 	> Created Time: 2018年11月19日 星期一 16时03分24秒
  ************************************************************************/
 
-#include<iostream>
+#include <iostream>
+#include <vector>
 using namespace std;
 class Solution {
 public:
@@ -39,7 +40,7 @@ public:
     int partition(vector<int>& arr,int low,int high){
         int base = arr[low];
 
-        while (low < high) {
+        while (low < high){ 
             while (low < high && arr[high] <= base) {
                 high--;
             }
@@ -53,3 +54,8 @@ public:
         return low;
     }
 };
+
+    int main(int argc,char* argv[]){
+        cout<<"hello"<<endl;
+        return 0;
+    }
